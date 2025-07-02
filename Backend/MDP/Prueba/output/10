@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<MPD xmlns="urn:mpeg:dash:schema:mpd:2011" profiles="urn:mpeg:dash:profile:isoff-on-demand:2011" minBufferTime="PT10.01S" mediaPresentationDuration="PT10.750S" type="static">
+  <!-- Created with Bento4 mp4-dash.py, VERSION=2.0.0-641 -->
+  <Period>
+    <!-- Video -->
+    <AdaptationSet mimeType="video/mp4" segmentAlignment="true" startWithSAP="1" maxWidth="1920" maxHeight="1080" subsegmentAlignment="true" subsegmentStartsWithSAP="1">
+      <Representation id="video-avc1-1" codecs="avc1.64002A" width="1920" height="1080" scanType="progressive" frameRate="60" bandwidth="4312867">
+        <BaseURL>media-video-avc1-1.mp4</BaseURL>
+        <SegmentBase indexRange="756-811">
+          <Initialization range="0-755"/>
+        </SegmentBase>
+      </Representation>
+      <Representation id="video-avc1-2" codecs="avc1.64002A" width="1280" height="720" scanType="progressive" frameRate="60" bandwidth="2652674">
+        <BaseURL>media-video-avc1-2.mp4</BaseURL>
+        <SegmentBase indexRange="754-809">
+          <Initialization range="0-753"/>
+        </SegmentBase>
+      </Representation>
+      <Representation id="video-avc1-3" codecs="avc1.64002A" width="854" height="480" scanType="progressive" frameRate="60" bandwidth="1341808">
+        <BaseURL>media-video-avc1-3.mp4</BaseURL>
+        <SegmentBase indexRange="760-815">
+          <Initialization range="0-759"/>
+        </SegmentBase>
+      </Representation>
+      <Representation id="video-avc1-4" codecs="avc1.64002A" width="640" height="360" scanType="progressive" frameRate="60" bandwidth="718070">
+        <BaseURL>media-video-avc1-4.mp4</BaseURL>
+        <SegmentBase indexRange="756-811">
+          <Initialization range="0-755"/>
+        </SegmentBase>
+      </Representation>
+    </AdaptationSet>
+    <!-- Audio -->
+    <AdaptationSet mimeType="audio/mp4" startWithSAP="1" segmentAlignment="true" subsegmentAlignment="true" subsegmentStartsWithSAP="1">
+      <Representation id="audio-und-mp4a.40.2" codecs="mp4a.40.2" bandwidth="131757" audioSamplingRate="48000">
+        <AudioChannelConfiguration schemeIdUri="urn:mpeg:mpegB:cicp:ChannelConfiguration" value="2"/>
+        <BaseURL>media-audio-und-mp4a.40.2.mp4</BaseURL>
+        <SegmentBase indexRange="627-670">
+          <Initialization range="0-626"/>
+        </SegmentBase>
+      </Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reproductor Shaka</title>
+</head>
+<body>
+  <h2>Selecciona un video del servidor</h2>
+  <select id="videoList"></select>
+  <button onclick="procesar()" id="procesarBtn">Procesar y reproducir</button>
+  <div id="status" class="status hidden"></div>
+  <video id="video" controls class="hidden" width="640" height="360"></video>
+
+  <!-- Carga el script de Shaka aquí, justo antes de tu código -->
+  <script src="js/shaka-player.compiled.js"></script>
+  
+  <script src="app.js"></script>
+</body>
+</html>
