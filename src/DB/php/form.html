@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Iniciar Sesión o Crear Cuenta</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Login CTA</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
+
 </head>
+<body>
 <div class="header-background">
     <a href="index.html" class="logo-link">
         <img src="img/logo.png" alt="Logo" class="logo" />
@@ -36,24 +38,24 @@
     </div>
     <div class="linea"></div>
 </div>
-<body>
-    <!-- Formulario de inicio de sesión -->
-    <form action="php/login.php" method="POST">
-        <input type="text" name="usuario" placeholder="Usuario o Email" required>
-        <input type="password" name="contrasena" placeholder="Contraseña" required>
-        <button type="submit">Entrar</button>
+
+  <div class="container">
+    <h2>Iniciar Sesión</h2>
+    <form action="login.php" method="POST">
+      <input type="text" name="usuario" placeholder="Usuario o Email" required>
+      <input type="password" name="contraseña" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
     </form>
 
     <div class="divider">o</div>
 
-    <!-- Formulario de registro -->
     <h2>Crear Cuenta</h2>
-    <form action="php/register.php" method="POST">
-        <input type="text" name="usuario" placeholder="Nombre de usuario" required>
-        <input type="email" name="correo" placeholder="Email" required>
-        <input type="password" name="contrasena" placeholder="Contraseña" required>
-        <button type="submit">Registrarse</button>
+    <form action="register.php" method="POST">
+      <input type="text" name="usuario" placeholder="Nombre de usuario" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="contraseña" placeholder="Contraseña" required>
+      <button type="submit">Registrarse</button>
     </form>
-    </div>
+  </div>
 </body>
-</html></div>
+</html>
