@@ -33,8 +33,8 @@ AUDIO_NAME = "audio.m4a"  # nombre fijo para la extracción
 FRAG = "mp4fragment"
 DASH = "mp4dash.bat"
 MPD  = "output/video.mpd"
-run  = lambda cmd: subprocess.run(cmd, check=True)
-
+def run(cmd, cwd=None):
+    subprocess.run(cmd, check=True, cwd=str(cwd) if cwd else None)
 # ───────────────────────── GUI helper ────────────────────────────
 
 def _gui_inputs() -> tuple[str, str]:
@@ -115,7 +115,7 @@ def empaquetar_digital(out_dir: Path):
     inputs = sorted(str(f) for f in out_dir.glob("*_f.mp4"))
     if not inputs:
         sys.exit("No se encontraron archivos fragmentados *_f.mp4 para mp4dash.")
-    run([DASH, "--force", "--mpd-name=" + MPD, "--profiles=on-demand", *inputs])
+    run([DASH, "--force", "--use-segment-timeline", "--mpd-name=video.mpd", "--profiles=on-demand", *inputs], cwd=out_dir)
     print("DASH listo →", out_dir / MPD)
 
 # ───────────────────────── MAIN script ──────────────────────────
