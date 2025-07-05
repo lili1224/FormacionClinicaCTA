@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Formación Clinica CTA</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
+  <script src="js/recargaform.js"></script>
+</head>
+<body>
+  <div class="header-background">
+    <a href="index.html" class="logo-link">
+      <img src="img/logo.png" alt="Logo" class="logo" />
+    </a>
+    <h1>
+        <a href="index.html" class="header-link">
+            FORMATE CON LA CLINICA<br> CTA
+        </a>
+    </h1>
+  </div>
+  
+  <div class="grid-wrapper">
+    <div class="grid-container">
+      <div class="grid-item">
+        <a href="https://www.clinicacta.com/" target="_blank" rel="noopener noreferrer" class="grid-button">
+          CLINICA<br>CTA
+        </a>
+      </div>
+      <div class="grid-item">
+        <a href="curso.html" class="grid-button">PROGRAMAS GRATUITOS</a>
+      </div>
+      <div class="grid-item">
+        <a href="curso.html" class="grid-button">PROGRAMAS PROFESIONALES</a>
+      </div>
+      <div class="grid-item">
+        <a href="iniciarsesion.html" class="grid-button">INICIAR SESIÓN</a>
+      </div>
+
+    </div>
+
+    <div class="linea"></div>
+  </div>
+  <div class="popular-programs">NUEVO CURSO</div>
+
+  <!-- Formulario de inicio de sesión -->
+    <form id="curso_form" action="DB/php/nuevocurso.php" method="POST">
+        <section>
+            <label for="titulo">Titulo del curso del curso:</label><br>
+            <input type="text" name="titulo" placeholder="Titulo del curso" required>
+        </section>
+        <section>
+            <label for="descripcion">Descripción del curso del curso:</label><br>
+            <textarea name="descripcion" placeholder="Descripcion del curso" required></textarea>
+        </section>
+        <section>
+            <label for="accesibilidad">Accesibilidad del curso:</label>
+            <select id="accesibilidad" name="accesibilidad">
+                <option value="publico">Público</option>
+                <option value="formacion">Formación</option>
+                <option value="privado">Privado</option>
+            </select>
+        </section>
+        <section>
+            <label for="keywords">Palabras clave:</label><br>
+            <input type="text" name="keywords" placeholder="Palabras clave" required><br>
+        </section>
+        <button type="submit">Crear</button>
+    </form>
+
+
+</body>
+</html>
