@@ -5,6 +5,8 @@
   <title>Formación Clinica CTA</title>
   <link rel="stylesheet" href="css/index.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
+  <script src="js/recargaformepisodio.js"></script>
+
 </head>
 <body>
   <div class="header-background">
@@ -53,7 +55,7 @@
         </section>
         <section>
             <label for="video">Seleccione el video del episodio:</label><br>
-            <input type="text" name="video" required>
+            <select id="video" name="video" required></select>
         </section>
         <section>
             <label for="curso">Seleccione un curso:</label>
@@ -63,6 +65,7 @@
         </section>
         <button type="submit">Crear</button>
     </form>
+    <script src="js/seleccionavideo.js"></script>
 
 
 </body>

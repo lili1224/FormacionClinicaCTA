@@ -8,7 +8,10 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ../../src:/var/www/html
+      - ../../src:/var/www/html         
+      - ../../Backend:/opt/backend      
+      - C:/FormacionClinicaCTA/VideosOriginales:/mnt/videos:ro  
+      - C:/FormacionClinicaCTA/VideosProcesados:/var/www/html/media
     depends_on:
       - db
  

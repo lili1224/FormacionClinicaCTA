@@ -19,15 +19,10 @@ Requisitos: ffmpeg, mp4fragment, mp4dash (Bento4) en el PATH + ffmpeg‑python.
 """
 
 import sys, subprocess
+import argparse
 from pathlib import Path
 import ffmpeg  # pip install ffmpeg-python
 
-# GUI -------------------------------------------------------------
-try:
-    import tkinter as _tk
-    from tkinter import filedialog as _fd
-except ImportError:
-    _tk = None
 
 AUDIO_NAME = "audio.m4a"  # nombre fijo para la extracción
 FRAG = "mp4fragment"
@@ -35,21 +30,6 @@ DASH = "mp4dash.bat"
 MPD  = "output/video.mpd"
 def run(cmd, cwd=None):
     subprocess.run(cmd, check=True, cwd=str(cwd) if cwd else None)
-# ───────────────────────── GUI helper ────────────────────────────
-
-def _gui_inputs() -> tuple[str, str]:
-    if _tk is None:
-        raise RuntimeError("tkinter no disponible")
-    root = _tk.Tk(); root.withdraw()
-    vid = _fd.askopenfilename(title="Vídeo a procesar",
-                              filetypes=[("Vídeo", "*.mp4 *.mov *.mkv *.avi"), ("Todos", "*.*")])
-    if not vid:
-        sys.exit("No se seleccionó vídeo.")
-    out = _fd.askdirectory(title="Carpeta de salida")
-    if not out:
-        sys.exit("No se seleccionó carpeta de salida.")
-    root.destroy()
-    return vid, out
 
 # ──────────────────── PASO 1: audio intacto ─────────────────────
 
@@ -111,30 +91,34 @@ def fragment(audio_m4a: Path, video_dir: Path, fragment_ms: int = 10):
 
 # ──────────────────── PASO 4: empaquetar DASH ───────────────────
 
-def empaquetar_digital(out_dir: Path):
+def empaquetar_digital(video_dir: Path, out_dir: Path):
     inputs = sorted(str(f) for f in out_dir.glob("*_f.mp4"))
     if not inputs:
         sys.exit("No se encontraron archivos fragmentados *_f.mp4 para mp4dash.")
-    run([DASH, "--force", "--use-segment-timeline", "--mpd-name=video.mpd", "--profiles=on-demand", *inputs], cwd=out_dir)
+    out_mpd = video_dir.with_stem(video_dir.stem + "*.mpd")
+    run([DASH, "--force", "--use-segment-timeline", "--mpd-name="+out_mpd, "--profiles=on-demand", *inputs], cwd=out_dir)
     print("DASH listo →", out_dir / MPD)
 
 # ───────────────────────── MAIN script ──────────────────────────
 
 def main():
-    if len(sys.argv) == 1:  # GUI
-        if _tk is None:
-            sys.exit("tkinter no disponible; use argumentos en CLI.")
-        src_path, out_dir = map(Path, _gui_inputs())
-    elif len(sys.argv) == 3:
-        src_path, out_dir = Path(sys.argv[1]), Path(sys.argv[2])
-    else:
-        print("Uso GUI:   python script.py\nUso CLI:   python script.py <video.mp4> <carpeta>"); return
+    parser = argparse.ArgumentParser(description="Procesa vídeo a MPEG‑DASH (.mpd)")
+    parser.add_argument("input", type=Path, help="Ruta del vídeo de entrada")
+    parser.add_argument("output", type=Path, help="Directorio donde guardar el paquete DASH")
+    args = parser.parse_args()
+
+    in_path: Path = args.input.expanduser().resolve()
+    out_dir: Path = args.output.expanduser().resolve()
+
+    if not in_path.is_file():
+        sys.exit(f"❌ Archivo de entrada no encontrado: {in_path}")
 
     out_dir.mkdir(parents=True, exist_ok=True)
+    
 
     # Ejecución de pasos
-    audio_mp3 = solo_audio(src_path, out_dir)
-    encode_video(src_path, out_dir)
+    audio_mp3 = solo_audio(in_path, out_dir)
+    encode_video(in_path, out_dir)
     fragment(audio_mp3, out_dir)
     empaquetar_digital(out_dir)
 
