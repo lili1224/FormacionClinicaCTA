@@ -25,11 +25,21 @@ import ffmpeg  # pip install ffmpeg-python
 
 
 AUDIO_NAME = "audio.m4a"  # nombre fijo para la extracción
-FRAG = "mp4fragment"
-DASH = "mp4dash.bat"
+FRAG = "/opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4fragment"
+DASH = "/opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4dash"
 MPD  = "output/video.mpd"
 def run(cmd, cwd=None):
-    subprocess.run(cmd, check=True, cwd=str(cwd) if cwd else None)
+    print("»", " ".join(cmd))
+    result = subprocess.run(
+        cmd,
+        cwd=str(cwd) if cwd else None,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True
+    )
+    if result.returncode:
+        print(result.stdout)        # esto va al .txt
+        raise RuntimeError(f"Falló: {' '.join(cmd)}")
 
 # ──────────────────── PASO 1: audio intacto ─────────────────────
 
@@ -91,13 +101,18 @@ def fragment(audio_m4a: Path, video_dir: Path, fragment_ms: int = 10):
 
 # ──────────────────── PASO 4: empaquetar DASH ───────────────────
 
-def empaquetar_digital(video_dir: Path, out_dir: Path):
+def empaquetar_digital(out_dir: Path):
     inputs = sorted(str(f) for f in out_dir.glob("*_f.mp4"))
     if not inputs:
-        sys.exit("No se encontraron archivos fragmentados *_f.mp4 para mp4dash.")
-    out_mpd = video_dir.with_stem(video_dir.stem + "*.mpd")
-    run([DASH, "--force", "--use-segment-timeline", "--mpd-name="+out_mpd, "--profiles=on-demand", *inputs], cwd=out_dir)
-    print("DASH listo →", out_dir / MPD)
+        sys.exit("No hay *_f.mp4 para mp4dash.")
+    run([
+        DASH,
+        "--force",
+        "--use-segment-timeline",
+        "--profiles=on-demand",
+        "--output-dir=output/video.mpd",      # <- nuevo
+        *inputs
+    ], cwd=out_dir)
 
 # ───────────────────────── MAIN script ──────────────────────────
 
@@ -117,10 +132,16 @@ def main():
     
 
     # Ejecución de pasos
-    audio_mp3 = solo_audio(in_path, out_dir)
+    audio_m4a = solo_audio(in_path, out_dir)
     encode_video(in_path, out_dir)
-    fragment(audio_mp3, out_dir)
+    fragment(audio_m4a, out_dir)
     empaquetar_digital(out_dir)
+
+    mpd_path = out_dir / MPD
+    if not mpd_path.exists():
+        sys.exit(f"No se generó el archivo MPD esperado: {mpd_path}")
+
+    print(f"MPD generado: {mpd_path}")
 
 if __name__ == "__main__":
     main()

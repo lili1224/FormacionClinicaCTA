@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="css/index.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
   <script src="js/recargaformepisodio.js"></script>
+  <script src="js/popupvideo.js"></script>
+
 
 </head>
 <body>
@@ -67,6 +69,21 @@
     </form>
     <script src="js/seleccionavideo.js"></script>
 
-
+    <div id="procesandoModal" style="
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 20px;
+">
+    <div style="background:#222; padding: 2em; border-radius: 8px;">
+      ⏳ Procesando episodio…<br>Esto puede tardar unos minutos.
+    </div>
+  </div>
 </body>
 </html>

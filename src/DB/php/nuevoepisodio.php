@@ -27,48 +27,46 @@ if (!$src || !str_starts_with($src, '/mnt/videos/')) {
 $outDir = "/var/www/html/media/".pathinfo($video, PATHINFO_FILENAME);
 @mkdir($outDir, 0777, true);
 
-/* ---------- DEBUG SOLO MIENTRAS PROBAMOS ---------- */
-$cmd = escapeshellcmd(
-    "python3 /opt/backend/procesado.py "
-  . escapeshellarg($src) . ' ' . escapeshellarg($outDir)
-) . ' 2>&1';                      // mezclamos stderr + stdout
+$timestamp = date('Ymd_His');
+$logFile = "/var/www/html/logs/procesado_$timestamp.txt";
 
-exec($cmd, $out, $code);
-
-echo '<h3>DEBUG: comando ejecutado</h3><pre>'.
-     htmlspecialchars($cmd) .
-     '</pre><h3>Salida completa</h3><pre>'.
-     htmlspecialchars(implode("\n", $out)) .
-     "\n\nExit-code: $code</pre>";
-exit;  // <-- detenemos aquí para leer
-/* --------------------------------------------------- */
-
-$cmd = escapeshellcmd(
-    "python3 ../../Backend/procesado.py "
-  . escapeshellarg($src) . ' ' . escapeshellarg($outDir)
-) . ' 2>&1';                     // ← redirige stderr a stdout
+$cmd = escapeshellcmd("python3 /opt/backend/procesado.py '$src' '$outDir'")
+      . " > " . escapeshellarg($logFile) . " 2>&1";
 
 exec($cmd, $out, $code);
 $log = implode("\n", $out);
 
 if ($code !== 0) {
-    error_log("Procesado falló ($code):\n$log");
     http_response_code(500);
-    exit('Error procesando el vídeo. Revisa el log del servidor.');
+    exit("Error procesando el vídeo. Detalles: <a href='/logs/" . basename($logFile) . "' target='_blank'>ver log</a>");
 }
 
-$mpd = "$outDir/output/video.mpd";
-if (!is_file($mpd)) {
-    error_log("MPD no generado en $mpd");
-    http_response_code(500);
-    exit('No se generó el MPD. Revisa el log.');
+// 3) Comprueba la existencia del MPD con ruta absoluta real
+$mpdAbsolute = realpath("$outDir/output/video.mpd");
+// vacía la caché de stat para que PHP no use datos viejos
+clearstatcache();
+
+if ($mpdAbsolute === false || !is_file($mpdAbsolute)) {
+    // ▸ Plan B: busca cualquier .mpd dentro de output/
+    $candidatos = glob($outDir . "/output/*.mpd");
+    if ($candidatos) {
+        $mpdAbsolute = realpath($candidatos[0]);     // primer MPD hallado
+    } else {
+        error_log("MPD no encontrado en $outDir/output/");
+        http_response_code(500);
+        exit("No se generó el MPD. Revisa el log.");
+    }
 }
 
+// 4) Ruta “web” (sin /var/www/html) para guardar en la BD
+$mpdWeb = str_replace('/var/www/html', '', $mpdAbsolute);
+
+// …inserta $mpdWeb en MySQL…
 $stmt = $conn->prepare(
    "INSERT INTO episodios (nombre, descripcion, video, curso)
     VALUES (?,?,?,?)"
 );
-$stmt->bind_param('ssss',$titulo,$desc,$mpd,$curso);
+$stmt->bind_param('ssss', $titulo, $desc, $mpdWeb, $curso);
 $stmt->execute();
 
 header('Location: /nuevoepisodio.html?success=1');
