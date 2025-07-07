@@ -9,6 +9,7 @@
   <script src="js/popupvideo.js"></script>
 
 
+
 </head>
 <body>
   <div class="header-background">
@@ -60,14 +61,15 @@
             <select id="video" name="video" required></select>
         </section>
         <section>
-            <label for="curso">Seleccione un curso:</label>
-            <select id="curso" name="curso">
-                <option value="Curso X" >Curso X</option>
-            </select>
+          <label for="curso">Seleccione un curso:</label><br>
+          <select id="curso" name="curso" required>
+            <option value="" disabled selected>— cargando cursos… —</option>
+          </select><br><br>
         </section>
         <button type="submit">Crear</button>
     </form>
     <script src="js/seleccionavideo.js"></script>
+    <script src="js/listacursos.js"></script>
 
     <div id="procesandoModal" style="
       display: none;
