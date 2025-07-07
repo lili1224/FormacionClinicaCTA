@@ -1,26 +1,43 @@
-const manifestUri = '../../Backend/MPD/output/video.mpd';  // La URL completa ya viene del servidor
+function getParam(name) {
+  return new URLSearchParams(window.location.search).get(name);
+}
 
-    function  initApp(){
-        // Instalar polyfills y reproducir con Shaka
-        shaka.polyfill.installAll();
-        if (shaka.Player.isBrowserSupported()) {
-            initPlayer();
-        } else {
-            console.log("Navegador no soportado por Shaka Player");
-        }
-    }
-    
-    document.addEventListener('DOMContentLoaded', initApp);
+async function initApp() {
+  // 1. ID del episodio
+  const episodeId = getParam('episodeId');
+  if (!episodeId) {
+    alert('Falta episodeId');
+    return;
+  }
 
-    async function initPlayer() {
-        const video = document.getElementById("video");
-        const player = new shaka.Player(video);
+  // 2. Petición al backend
+  const res  = await fetch(`../DB/php/episode.php?id=${episodeId}`);
+  const data = await res.json();
+  if (!data || !data.video) {
+    alert('No se encontró el episodio o no tiene video');
+    return;
+  }
 
-        try {
-            await player.load(manifestUri);
-            console.log('El video se ha cargado correctamente!');
-        }catch (error) {
-            console.error('Error al cargar el video:', error);
-            alert('Error al cargar el video: ' + error.message);
-        }
-    }
+  // 3. Cargar Shaka
+  shaka.polyfill.installAll();
+  if (!shaka.Player.isBrowserSupported()) {
+    alert('Navegador no soportado por Shaka');
+    return;
+  }
+
+  const video   = document.getElementById('video');
+  const player  = new shaka.Player(video);
+
+  try {
+    await player.load(data.video);   // <-- usa la URL de la BD
+    console.log('Vídeo cargado correctamente');
+  } catch (err) {
+    console.error('Error al cargar vídeo: ', err);
+    alert('No se pudo reproducir el vídeo');
+  }
+
+  // 4. (opcional) Título en la página
+  document.title = data.title || 'Reproductor video';
+}
+
+document.addEventListener('DOMContentLoaded', initApp);
