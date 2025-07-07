@@ -1,0 +1,2 @@
+# Empty .htaccess to test
+ErrorDocument 404 /404.html

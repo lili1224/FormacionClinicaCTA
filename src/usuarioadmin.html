@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Panel de Administración - Clínica CTA</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Logo -->
+  <a href="index.html" class="logo-link">
+    <img src="img/logo.png" alt="Logo" class="logo" />
+  </a>
+
+  <!-- Cabecera -->
+  <div class="header-background">
+    <h1>
+      <a href="index.html" class="header-link">
+        FORMATE CON LA CLÍNICA<br> CTA
+      </a>
+    </h1>
+  </div>
+
+  <!-- Navegación -->
+  <div class="grid-wrapper">
+    <div class="grid-container">
+      <div class="grid-item">
+        <a href="https://www.clinicacta.com/" target="_blank" rel="noopener noreferrer" class="grid-button">
+          CLÍNICA<br>CTA
+        </a>
+      </div>
+      <div class="grid-item">
+        <a href="curso.html" class="grid-button">PROGRAMAS GRATUITOS</a>
+      </div>
+      <div class="grid-item">
+        <a href="curso.html" class="grid-button">PROGRAMAS PROFESIONALES</a>
+      </div>
+      <div class="grid-item">
+        <a href="usuarioadmin.html" class="grid-button" id="btn-login">USUARIO</a>
+      </div>
+    </div>
+    <div class="linea"></div>
+  </div>
+
+  <!-- Contenido del panel admin -->
+  <!-- Sección: Mis cursos -->
+<section class="seccion">
+  <div class="titulo-seccion">
+    <h2 id="user-name">NOMBRE DEL USUARIO</h2>
+    <div class="subtitulo-seccion">
+      <h3>Mis cursos</h3>
+      <button class="boton-agregar" id="agregarCurso">
+        <img src="img/plus-icon.svg" alt="Añadir curso" />
+      </button>
+    </div>
+  </div>
+
+  <div class="grid-cursos">
+    <!-- Curso 1 -->
+    <div class="curso-box">
+      <div class="curso-overlay">
+        <p>Nombre del curso</p>
+      </div>
+      <img src="img/curso1.jpg" alt="Curso 1" />
+    </div>
+
+    <!-- Curso 2 -->
+    <div class="curso-box">
+      <div class="curso-overlay">
+        <p>Nombre del curso</p>
+      </div>
+      <img src="img/curso2.jpg" alt="Curso 2" />
+    </div>
+    
+    <!-- Más cursos en el futuro -->
+  </div>
+</section>
+
+<!-- Sección: Mis episodios -->
+<section class="seccion">
+  <div class="subtitulo-seccion">
+    <h3>Mis episodios</h3>
+    <button class="boton-agregar" id="agregarEpisodio">
+      <img src="img/plus-icon.svg" alt="Añadir episodio" />
+    </button>
+  </div>
+
+  <!-- Aquí irán las cajas de episodios cuando se añadan -->
+</section>
+
+
+  <!-- Botón cerrar sesión -->
+    <button class="button-81" id="cerrarSesion">Cerrar sesión</button>
+
+
+  <!-- Script personalizado -->
+  <script src="js/usuario.js"></script>
+</body>
+</html>

@@ -6,54 +6,101 @@
     <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
 </head>
-<div class="header-background">
-    <a href="index.html" class="logo-link">
-        <img src="img/logo.png" alt="Logo" class="logo" />
-    </a>
-    <h1>
-        <a href="index.html" class="header-link">
-            FORMATE CON LA CLINICA<br> CTA
-        </a>
-    </h1>
-</div>
-
-<div class="grid-wrapper">
-    <div class="grid-container">
-        <div class="grid-item">
-            <a href="https://www.clinicacta.com/" target="_blank" rel="noopener noreferrer" class="grid-button">
-                CLINICA<br>CTA
-            </a>
-        </div>
-        <div class="grid-item">
-            <a href="curso.html" class="grid-button">PROGRAMAS GRATUITOS</a>
-        </div>
-        <div class="grid-item">
-            <a href="curso.html" class="grid-button">PROGRAMAS PROFESIONALES</a>
-        </div>
-        <div class="grid-item">
-            <a href="iniciarsesion.html" class="grid-button">INICIAR SESIÓN</a>
-        </div>
-    </div>
-    <div class="linea"></div>
-</div>
 <body>
-    <!-- Formulario de inicio de sesión -->
-    <form action="php/login.php" method="POST">
-        <input type="text" name="usuario" placeholder="Usuario o Email" required>
-        <input type="password" name="contrasena" placeholder="Contraseña" required>
-        <button type="submit">Entrar</button>
-    </form>
-
-    <div class="divider">o</div>
-
-    <!-- Formulario de registro -->
-    <h2>Crear Cuenta</h2>
-    <form action="php/register.php" method="POST">
-        <input type="text" name="usuario" placeholder="Nombre de usuario" required>
-        <input type="email" name="correo" placeholder="Email" required>
-        <input type="password" name="contrasena" placeholder="Contraseña" required>
-        <button type="submit">Registrarse</button>
-    </form>
+    <!-- Cabecera -->
+    <div class="header-background">
+        <a href="index.html" class="logo-link">
+            <img src="img/logo.png" alt="Logo" class="logo" />
+        </a>
+        <h1>
+            <a href="index.html" class="header-link">
+                FORMATE CON LA CLINICA<br> CTA
+            </a>
+        </h1>
     </div>
+
+    <!-- Navegación -->
+    <div class="grid-wrapper">
+        <div class="grid-container">
+            <div class="grid-item">
+                <a href="https://www.clinicacta.com/" target="_blank" rel="noopener noreferrer" class="grid-button">
+                    CLINICA<br>CTA
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="curso.html" class="grid-button">PROGRAMAS GRATUITOS</a>
+            </div>
+            <div class="grid-item">
+                <a href="curso.html" class="grid-button">PROGRAMAS PROFESIONALES</a>
+            </div>
+            <div class="grid-item">
+                <a href="iniciarsesion.html" class="grid-button">INICIAR SESIÓN</a>
+            </div>
+        </div>
+        <div class="linea"></div>
+    </div>
+
+    <!-- Contenedor de formularios -->
+    <div class="container">
+        <div class="left">
+            <h2>Iniciar Sesión</h2>
+            <form action="DB/php/login.php" method="POST">
+                <div class="form-group">
+                    <label for="usuario-login">Nombre de usuario o correo:</label>
+                </div>    
+                <div class="form-group">
+                    <input type="text" id="usuario-login" name="usuario" placeholder="Usuario o Email" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="contrasena-login">Contraseña:</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="contrasena-login" name="contrasena" placeholder="Contraseña" required />
+                </div>
+                <button type="submit">Entrar</button>
+            </form>
+            </div>
+
+
+        <div class="divider"></div>
+
+        <div class="right">
+            <h2>Crear Cuenta</h2>
+            <form action="DB/php/register.php" method="POST">
+            <div class="form-group">
+                <label for="usuario-login">Nombre de usuario:</label>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="usuario" placeholder="Nombre de usuario" required />
+            </div>
+            <div class="form-group">
+                <label for="usuario-login">Correo electrónico:</label>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" name="correo" placeholder="Email" required />
+            </div>
+            <div class="form-group">
+                <label for="usuario-login">Contraseña:</label>
+            </div>
+
+            <div class="form-group">   
+                <input type="password" name="contrasena" placeholder="Contraseña" required />
+            </div> 
+            <button type="submit">Registrarse</button>
+            </form>
+        </div>
+        </div>
+
+
+    <script>
+    const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('error') === '1') {
+            alert('Usuario o contraseña incorrectos. Inténtalo de nuevo.');
+        }
+    </script>
+
 </body>
-</html></div>
+</html>
