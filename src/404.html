@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Página no encontrada</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const usuario = localStorage.getItem('usuario');
+      if (usuario) {
+        // Si usuario está logueado, va a index.html
+        window.location.href = 'index.html';
+      } else {
+        // Si no, a iniciarsesion.html
+        window.location.href = 'iniciarsesion.html';
+      }
+    });
+  </script>
+</head>
+<body>
+  <h1>Redirigiendo...</h1>
+</body>
+</html>
