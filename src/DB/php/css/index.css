@@ -177,3 +177,47 @@ h1 a.header-link {
   user-select: none;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
+
+/*Iniciar sesion*/
+.container input,
+.container button {
+    box-shadow: inset #abacaf 0 0 0 2px;
+    border: 0;
+    background: rgba(255, 255, 255, 0.05);
+    appearance: none;
+    width: 100%;
+    position: relative;
+    border-radius: 6px;
+    padding: 10px 14px;
+    line-height: 1.4;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    height: 44px;
+    margin-bottom: 15px;
+    transition: all 0.2s ease;
+}
+
+.container input:hover,
+.container button:hover {
+    box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 2px;
+}
+
+.container input:focus {
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 3px;
+}
+
+.container button {
+    background-color: #1de9b6;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.container button:hover {
+    background-color: #10c4a0;
+    box-shadow: 0 0 0 0 #fff inset, #10c4a0 0 0 0 2px;
+}
