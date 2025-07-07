@@ -43,7 +43,7 @@
   <div class="popular-programs">NUEVO CURSO</div>
 
   <!-- Formulario de inicio de sesión -->
-    <form id="curso_form" action="DB/php/nuevocurso.php" method="POST">
+    <form id="curso_form" action="DB/php/nuevocurso.php" method="POST" enctype="multipart/form-data">
         <section>
             <label for="titulo">Titulo del curso del curso:</label><br>
             <input type="text" name="titulo" placeholder="Titulo del curso" required>
@@ -51,6 +51,10 @@
         <section>
             <label for="descripcion">Descripción del curso del curso:</label><br>
             <textarea name="descripcion" placeholder="Descripcion del curso" required></textarea>
+        </section>
+        <section>
+          <label for="imagen">Imagen del curso:</label><br>
+          <input type="file" name="imagen" accept="image/*" accept="image/png, image/jpeg, image/webp, image/gif" required>
         </section>
         <section>
             <label for="accesibilidad">Accesibilidad del curso:</label>
