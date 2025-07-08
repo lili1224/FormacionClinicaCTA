@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/pathlib.py", line 1117, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/var/www/html/media/ferrandis'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/backend/procesado.py", line 148, in <module>
+    main()
+  File "/opt/backend/procesado.py", line 132, in main
+    out_dir.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.11/pathlib.py", line 1121, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.11/pathlib.py", line 1117, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/var/www/html/media'

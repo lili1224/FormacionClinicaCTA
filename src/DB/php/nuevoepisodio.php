@@ -24,7 +24,7 @@ if (!$src || !str_starts_with($src, '/mnt/videos/')) {
     exit('Vídeo no válido');
 }
 
-$outDir = "/var/www/html/media/".pathinfo($video, PATHINFO_FILENAME);
+$outDir = "VideosProcesados/".pathinfo($video, PATHINFO_FILENAME);
 @mkdir($outDir, 0777, true);
 
 $timestamp = date('Ymd_His');
