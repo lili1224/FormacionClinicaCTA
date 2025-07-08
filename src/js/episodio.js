@@ -11,8 +11,8 @@ async function loadCourseAndEpisodes() {
 
   try {
     const [courseRes, episodesRes] = await Promise.all([
-      fetch(`../DB/php/curso.php?id=${courseId}`),
-      fetch(`../DB/php/episodios.php?courseId=${courseId}`)
+      fetch(`../DB/php/cursos.php?id=${courseId}`),
+      fetch(`../DB/php/episodio.php?courseId=${courseId}`)
     ]);
 
     const course    = await courseRes.json();
