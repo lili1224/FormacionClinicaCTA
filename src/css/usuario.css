@@ -1,0 +1,16 @@
+a.enlace-episodios {
+  color: black;
+  text-decoration: underline;
+  transition: transform 0.2s ease-in-out;
+  display: inline-block;
+}
+
+a.enlace-episodios:visited {
+  color: black;
+}
+
+a.enlace-episodios:hover,
+a.enlace-episodios:focus {
+  transform: scale(1.1);
+}
+
