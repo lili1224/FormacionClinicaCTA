@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const usuario = localStorage.getItem('usuario');
   const isAdmin = localStorage.getItem('isAdmin');
   const btnLogin = document.getElementById('btn-login');
-  const btnLogout = document.getElementById('btn-logout');
+  const btnLogout = document.getElementById('cerrarSesion');
   const userNameEl = document.getElementById('user-name');
 
   if (!usuario) {
