@@ -110,7 +110,8 @@ def empaquetar_digital(out_dir: Path):
         "--force",
         "--use-segment-timeline",
         "--profiles=on-demand",
-        "--output-dir=output/video.mpd",      # <- nuevo
+        f"--output-dir={out_dir}/output",
+        "--mpd-name=video.mpd",    
         *inputs
     ], cwd=out_dir)
 
