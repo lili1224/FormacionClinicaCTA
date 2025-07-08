@@ -1,0 +1,97 @@
+/* Estilos generales para el formulario */
+form#episodio_form {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background: transparent;
+    border-radius: 16px;
+    border: 3px solid #ccc;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Cada sección */
+form#episodio_form section {
+  margin-bottom: 24px;
+}
+
+/* Labels */
+form#episodio_form label {
+  display: block;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+/* Inputs, textarea y selects */
+form#episodio_form input[type="text"],
+form#episodio_form textarea,
+form#episodio_form select {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1.8px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+form#episodio_form input[type="text"]:focus,
+form#episodio_form textarea:focus,
+form#episodio_form select:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Textarea mínimo alto */
+form#episodio_form textarea {
+  min-height: 100px;
+}
+
+/* Botón crear */
+form#episodio_form button[type="submit"] {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 16px 24px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  box-shadow: 0 6px 15px rgba(74,144,226,0.5);
+  transition: background-color 0.3s ease;
+}
+
+form#episodio_form button[type="submit"]:hover {
+  background-color: #357ABD;
+}
+
+/* Modal procesando */
+#procesandoModal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 1000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+#procesandoModal > div {
+  background: #222;
+  padding: 2em 3em;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
