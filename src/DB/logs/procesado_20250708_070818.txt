@@ -1,643 +1,0 @@
-ffmpeg version 5.1.6-0+deb12u1 Copyright (c) 2000-2024 the FFmpeg developers
-  built with gcc 12 (Debian 12.2.0-14)
-  configuration: --prefix=/usr --extra-version=0+deb12u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librist --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --disable-sndio --enable-libjxl --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-libplacebo --enable-librav1e --enable-shared
-  libavutil      57. 28.100 / 57. 28.100
-  libavcodec     59. 37.100 / 59. 37.100
-  libavformat    59. 27.100 / 59. 27.100
-  libavdevice    59.  7.100 / 59.  7.100
-  libavfilter     8. 44.100 /  8. 44.100
-  libswscale      6.  7.100 /  6.  7.100
-  libswresample   4.  7.100 /  4.  7.100
-  libpostproc    56.  6.100 / 56.  6.100
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/mnt/videos/ferrandis.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf58.76.100
-  Duration: 00:01:46.53, start: 0.000000, bitrate: 807 kb/s
-  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], 670 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
-    Metadata:
-      handler_name    : VideoHandler
-      vendor_id       : [0][0][0][0]
-  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
-    Metadata:
-      handler_name    : SoundHandler
-      vendor_id       : [0][0][0][0]
-Stream mapping:
-  Stream #0:1 -> #0:0 (aac (native) -> aac (native))
-Press [q] to stop, [?] for help
-Output #0, ipod, to '/var/www/html/media/ferrandis/audio.m4a':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf59.27.100
-  Stream #0:0(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
-    Metadata:
-      handler_name    : SoundHandler
-      vendor_id       : [0][0][0][0]
-      encoder         : Lavc59.37.100 aac
-size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    size=     256kB time=00:00:20.80 bitrate= 100.8kbits/s speed=41.6x    size=     512kB time=00:00:42.34 bitrate=  99.1kbits/s speed=42.3x    size=    1024kB time=00:01:04.08 bitrate= 130.9kbits/s speed=42.7x    size=    1280kB time=00:01:24.73 bitrate= 123.8kbits/s speed=42.3x    size=    1821kB time=00:01:46.41 bitrate= 140.2kbits/s speed=43.7x    
-video:0kB audio:1801kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 1.126314%
-[aac @ 0x58e5d7e4adc0] Qavg: 689.858
-ffmpeg version 5.1.6-0+deb12u1 Copyright (c) 2000-2024 the FFmpeg developers
-  built with gcc 12 (Debian 12.2.0-14)
-  configuration: --prefix=/usr --extra-version=0+deb12u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librist --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --disable-sndio --enable-libjxl --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-libplacebo --enable-librav1e --enable-shared
-  libavutil      57. 28.100 / 57. 28.100
-  libavcodec     59. 37.100 / 59. 37.100
-  libavformat    59. 27.100 / 59. 27.100
-  libavdevice    59.  7.100 / 59.  7.100
-  libavfilter     8. 44.100 /  8. 44.100
-  libswscale      6.  7.100 /  6.  7.100
-  libswresample   4.  7.100 /  4.  7.100
-  libpostproc    56.  6.100 / 56.  6.100
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/mnt/videos/ferrandis.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf58.76.100
-  Duration: 00:01:46.53, start: 0.000000, bitrate: 807 kb/s
-  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], 670 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
-    Metadata:
-      handler_name    : VideoHandler
-      vendor_id       : [0][0][0][0]
-  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
-    Metadata:
-      handler_name    : SoundHandler
-      vendor_id       : [0][0][0][0]
-Stream mapping:
-  Stream #0:0 (h264) -> scale:default
-  scale:default -> Stream #0:0 (libx264)
-Press [q] to stop, [?] for help
-[libx264 @ 0x64fd4c9ca840] using SAR=1/1
-[libx264 @ 0x64fd4c9ca840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
-[libx264 @ 0x64fd4c9ca840] profile High, level 3.1, 4:2:0, 8-bit
-[libx264 @ 0x64fd4c9ca840] 264 - core 164 r3095 baee400 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=17 lookahead_threads=2 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=2 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=24 keyint_min=2 scenecut=40 intra_refresh=0 rc_lookahead=24 rc=crf mbtree=1 crf=20.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
-Output #0, mp4, to '/var/www/html/media/ferrandis/v960x540_20.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf59.27.100
-  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 960x540 [SAR 1:1 DAR 16:9], q=2-31, 30 fps, 15360 tbn
-    Metadata:
-      encoder         : Lavc59.37.100 libx264
-    Side data:
-      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
-frame=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    frame=  343 fps=0.0 q=26.0 size=     256kB time=00:00:09.86 bitrate= 212.6kbits/s speed=18.1x    frame=  763 fps=730 q=26.0 size=    1024kB time=00:00:23.86 bitrate= 351.5kbits/s speed=22.8x    frame= 1175 fps=760 q=26.0 size=    1792kB time=00:00:37.60 bitrate= 390.4kbits/s speed=24.3x    frame= 1494 fps=730 q=26.0 size=    3584kB time=00:00:48.23 bitrate= 608.7kbits/s speed=23.6x    frame= 1894 fps=744 q=26.0 size=    5120kB time=00:01:01.56 bitrate= 681.3kbits/s speed=24.2x    frame= 2308 fps=757 q=26.0 size=    6400kB time=00:01:15.36 bitrate= 695.7kbits/s speed=24.7x    frame= 2683 fps=756 q=26.0 size=    7680kB time=00:01:27.86 bitrate= 716.0kbits/s speed=24.8x    frame= 3122 fps=771 q=26.0 size=    8704kB time=00:01:42.50 bitrate= 695.6kbits/s speed=25.3x    frame= 3196 fps=763 q=-1.0 Lsize=    9163kB time=00:01:46.43 bitrate= 705.3kbits/s speed=25.4x    
-video:9132kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.337053%
-[libx264 @ 0x64fd4c9ca840] frame I:134   Avg QP:12.73  size: 49726
-[libx264 @ 0x64fd4c9ca840] frame P:1274  Avg QP:17.76  size:  2006
-[libx264 @ 0x64fd4c9ca840] frame B:1788  Avg QP:16.97  size:    74
-[libx264 @ 0x64fd4c9ca840] consecutive B-frames: 13.2% 11.5% 75.3%
-[libx264 @ 0x64fd4c9ca840] mb I  I16..4: 46.1% 29.2% 24.7%
-[libx264 @ 0x64fd4c9ca840] mb P  I16..4:  2.7%  2.6%  0.4%  P16..4:  7.0%  0.8%  1.0%  0.0%  0.0%    skip:85.5%
-[libx264 @ 0x64fd4c9ca840] mb B  I16..4:  0.1%  0.1%  0.0%  B16..8:  1.0%  0.0%  0.0%  direct: 0.2%  skip:98.6%  L0:33.4% L1:62.3% BI: 4.2%
-[libx264 @ 0x64fd4c9ca840] 8x8 transform intra:35.1% inter:59.8%
-[libx264 @ 0x64fd4c9ca840] coded y,uvDC,uvAC intra: 19.9% 22.7% 19.6% inter: 2.0% 2.0% 0.5%
-[libx264 @ 0x64fd4c9ca840] i16 v,h,dc,p: 54% 41%  4%  1%
-[libx264 @ 0x64fd4c9ca840] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 37% 21% 37%  1%  1%  1%  1%  1%  1%
-[libx264 @ 0x64fd4c9ca840] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 29% 34% 10%  3%  4%  4%  6%  3%  7%
-[libx264 @ 0x64fd4c9ca840] i8c dc,h,v,p: 68% 25%  6%  1%
-[libx264 @ 0x64fd4c9ca840] Weighted P-Frames: Y:9.2% UV:2.0%
-[libx264 @ 0x64fd4c9ca840] ref P L0: 59.5% 21.8% 15.9%  2.2%  0.6%
-[libx264 @ 0x64fd4c9ca840] ref B L0: 74.0% 23.2%  2.9%
-[libx264 @ 0x64fd4c9ca840] kb/s:702.20
-ffmpeg version 5.1.6-0+deb12u1 Copyright (c) 2000-2024 the FFmpeg developers
-  built with gcc 12 (Debian 12.2.0-14)
-  configuration: --prefix=/usr --extra-version=0+deb12u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librist --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --disable-sndio --enable-libjxl --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-libplacebo --enable-librav1e --enable-shared
-  libavutil      57. 28.100 / 57. 28.100
-  libavcodec     59. 37.100 / 59. 37.100
-  libavformat    59. 27.100 / 59. 27.100
-  libavdevice    59.  7.100 / 59.  7.100
-  libavfilter     8. 44.100 /  8. 44.100
-  libswscale      6.  7.100 /  6.  7.100
-  libswresample   4.  7.100 /  4.  7.100
-  libpostproc    56.  6.100 / 56.  6.100
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/mnt/videos/ferrandis.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf58.76.100
-  Duration: 00:01:46.53, start: 0.000000, bitrate: 807 kb/s
-  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], 670 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
-    Metadata:
-      handler_name    : VideoHandler
-      vendor_id       : [0][0][0][0]
-  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
-    Metadata:
-      handler_name    : SoundHandler
-      vendor_id       : [0][0][0][0]
-Stream mapping:
-  Stream #0:0 (h264) -> scale:default
-  scale:default -> Stream #0:0 (libx264)
-Press [q] to stop, [?] for help
-[libx264 @ 0x636c3860e840] using SAR=1/1
-[libx264 @ 0x636c3860e840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
-[libx264 @ 0x636c3860e840] profile High, level 3.1, 4:2:0, 8-bit
-[libx264 @ 0x636c3860e840] 264 - core 164 r3095 baee400 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=17 lookahead_threads=2 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=2 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=24 keyint_min=2 scenecut=40 intra_refresh=0 rc_lookahead=24 rc=crf mbtree=1 crf=30.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
-Output #0, mp4, to '/var/www/html/media/ferrandis/v960x540_30.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf59.27.100
-  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 960x540 [SAR 1:1 DAR 16:9], q=2-31, 30 fps, 15360 tbn
-    Metadata:
-      encoder         : Lavc59.37.100 libx264
-    Side data:
-      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
-frame=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    frame=  385 fps=0.0 q=36.0 size=       0kB time=00:00:11.26 bitrate=   0.0kbits/s speed=21.3x    frame=  813 fps=789 q=33.0 size=     512kB time=00:00:25.53 bitrate= 164.3kbits/s speed=24.8x    frame= 1205 fps=787 q=36.0 size=     768kB time=00:00:38.60 bitrate= 163.0kbits/s speed=25.2x    frame= 1607 fps=791 q=36.0 size=    1536kB time=00:00:52.00 bitrate= 242.0kbits/s speed=25.6x    frame= 2061 fps=814 q=33.0 size=    2304kB time=00:01:07.13 bitrate= 281.2kbits/s speed=26.5x    frame= 2491 fps=821 q=36.0 size=    2816kB time=00:01:21.46 bitrate= 283.2kbits/s speed=26.8x    frame= 2928 fps=828 q=36.0 size=    3584kB time=00:01:36.03 bitrate= 305.7kbits/s speed=27.2x    frame= 3196 fps=814 q=-1.0 Lsize=    4031kB time=00:01:46.43 bitrate= 310.3kbits/s speed=27.1x    
-video:4000kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.767104%
-[libx264 @ 0x636c3860e840] frame I:134   Avg QP:24.00  size: 23957
-[libx264 @ 0x636c3860e840] frame P:1274  Avg QP:26.16  size:   617
-[libx264 @ 0x636c3860e840] frame B:1788  Avg QP:25.58  size:    55
-[libx264 @ 0x636c3860e840] consecutive B-frames: 13.2% 11.5% 75.3%
-[libx264 @ 0x636c3860e840] mb I  I16..4: 36.2% 44.3% 19.5%
-[libx264 @ 0x636c3860e840] mb P  I16..4:  2.3%  2.0%  0.1%  P16..4:  4.1%  0.3%  0.4%  0.0%  0.0%    skip:90.7%
-[libx264 @ 0x636c3860e840] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  1.4%  0.0%  0.0%  direct: 0.0%  skip:98.5%  L0:37.7% L1:60.6% BI: 1.7%
-[libx264 @ 0x636c3860e840] 8x8 transform intra:44.4% inter:63.8%
-[libx264 @ 0x636c3860e840] coded y,uvDC,uvAC intra: 17.4% 18.3% 14.2% inter: 0.9% 0.7% 0.1%
-[libx264 @ 0x636c3860e840] i16 v,h,dc,p: 46% 48%  5%  1%
-[libx264 @ 0x636c3860e840] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 38% 25% 30%  1%  1%  1%  1%  1%  2%
-[libx264 @ 0x636c3860e840] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 31% 35% 11%  3%  4%  3%  5%  3%  6%
-[libx264 @ 0x636c3860e840] i8c dc,h,v,p: 69% 24%  5%  1%
-[libx264 @ 0x636c3860e840] Weighted P-Frames: Y:9.2% UV:2.0%
-[libx264 @ 0x636c3860e840] ref P L0: 47.5% 29.2% 15.9%  4.7%  2.7%
-[libx264 @ 0x636c3860e840] ref B L0: 56.4% 37.9%  5.7%
-[libx264 @ 0x636c3860e840] kb/s:307.57
-ffmpeg version 5.1.6-0+deb12u1 Copyright (c) 2000-2024 the FFmpeg developers
-  built with gcc 12 (Debian 12.2.0-14)
-  configuration: --prefix=/usr --extra-version=0+deb12u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librist --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --disable-sndio --enable-libjxl --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-libplacebo --enable-librav1e --enable-shared
-  libavutil      57. 28.100 / 57. 28.100
-  libavcodec     59. 37.100 / 59. 37.100
-  libavformat    59. 27.100 / 59. 27.100
-  libavdevice    59.  7.100 / 59.  7.100
-  libavfilter     8. 44.100 /  8. 44.100
-  libswscale      6.  7.100 /  6.  7.100
-  libswresample   4.  7.100 /  4.  7.100
-  libpostproc    56.  6.100 / 56.  6.100
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/mnt/videos/ferrandis.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf58.76.100
-  Duration: 00:01:46.53, start: 0.000000, bitrate: 807 kb/s
-  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], 670 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
-    Metadata:
-      handler_name    : VideoHandler
-      vendor_id       : [0][0][0][0]
-  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
-    Metadata:
-      handler_name    : SoundHandler
-      vendor_id       : [0][0][0][0]
-Stream mapping:
-  Stream #0:0 (h264) -> scale:default
-  scale:default -> Stream #0:0 (libx264)
-Press [q] to stop, [?] for help
-[libx264 @ 0x5932d981e840] using SAR=1/1
-[libx264 @ 0x5932d981e840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
-[libx264 @ 0x5932d981e840] profile High, level 3.1, 4:2:0, 8-bit
-[libx264 @ 0x5932d981e840] 264 - core 164 r3095 baee400 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=17 lookahead_threads=2 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=2 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=24 keyint_min=2 scenecut=40 intra_refresh=0 rc_lookahead=24 rc=crf mbtree=1 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
-Output #0, mp4, to '/var/www/html/media/ferrandis/v960x540_40.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf59.27.100
-  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 960x540 [SAR 1:1 DAR 16:9], q=2-31, 30 fps, 15360 tbn
-    Metadata:
-      encoder         : Lavc59.37.100 libx264
-    Side data:
-      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
-frame=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    frame=  404 fps=0.0 q=46.0 size=       0kB time=00:00:11.90 bitrate=   0.0kbits/s speed=22.5x    frame=  855 fps=829 q=46.0 size=       0kB time=00:00:26.93 bitrate=   0.0kbits/s speed=26.1x    frame= 1236 fps=806 q=46.0 size=     256kB time=00:00:39.63 bitrate=  52.9kbits/s speed=25.9x    frame= 1678 fps=825 q=46.0 size=     512kB time=00:00:54.36 bitrate=  77.2kbits/s speed=26.7x    frame= 2120 fps=837 q=46.0 size=     768kB time=00:01:09.10 bitrate=  91.1kbits/s speed=27.3x    frame= 2558 fps=843 q=46.0 size=    1024kB time=00:01:23.70 bitrate= 100.2kbits/s speed=27.6x    frame= 2992 fps=846 q=46.0 size=    1280kB time=00:01:38.16 bitrate= 106.8kbits/s speed=27.7x    frame= 3196 fps=838 q=-1.0 Lsize=    1600kB time=00:01:46.43 bitrate= 123.2kbits/s speed=27.9x    
-video:1570kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 1.953248%
-[libx264 @ 0x5932d981e840] frame I:134   Avg QP:33.47  size:  9145
-[libx264 @ 0x5932d981e840] frame P:1274  Avg QP:33.41  size:   232
-[libx264 @ 0x5932d981e840] frame B:1788  Avg QP:33.09  size:    48
-[libx264 @ 0x5932d981e840] consecutive B-frames: 13.2% 11.5% 75.3%
-[libx264 @ 0x5932d981e840] mb I  I16..4: 39.1% 49.1% 11.8%
-[libx264 @ 0x5932d981e840] mb P  I16..4:  2.1%  1.1%  0.0%  P16..4:  1.9%  0.1%  0.1%  0.0%  0.0%    skip:94.7%
-[libx264 @ 0x5932d981e840] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  1.3%  0.0%  0.0%  direct: 0.0%  skip:98.7%  L0:35.5% L1:63.8% BI: 0.7%
-[libx264 @ 0x5932d981e840] 8x8 transform intra:45.5% inter:80.8%
-[libx264 @ 0x5932d981e840] coded y,uvDC,uvAC intra: 15.3% 14.9% 7.5% inter: 0.2% 0.2% 0.0%
-[libx264 @ 0x5932d981e840] i16 v,h,dc,p: 43% 50%  6%  1%
-[libx264 @ 0x5932d981e840] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 36% 23% 33%  1%  1%  1%  1%  1%  2%
-[libx264 @ 0x5932d981e840] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 33% 34% 12%  3%  4%  3%  5%  2%  5%
-[libx264 @ 0x5932d981e840] i8c dc,h,v,p: 75% 18%  6%  1%
-[libx264 @ 0x5932d981e840] Weighted P-Frames: Y:9.2% UV:2.0%
-[libx264 @ 0x5932d981e840] ref P L0: 60.6% 15.4% 12.0%  6.0%  6.0%
-[libx264 @ 0x5932d981e840] ref B L0: 56.0% 36.3%  7.7%
-[libx264 @ 0x5932d981e840] kb/s:120.64
-ffmpeg version 5.1.6-0+deb12u1 Copyright (c) 2000-2024 the FFmpeg developers
-  built with gcc 12 (Debian 12.2.0-14)
-  configuration: --prefix=/usr --extra-version=0+deb12u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librist --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --disable-sndio --enable-libjxl --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-libplacebo --enable-librav1e --enable-shared
-  libavutil      57. 28.100 / 57. 28.100
-  libavcodec     59. 37.100 / 59. 37.100
-  libavformat    59. 27.100 / 59. 27.100
-  libavdevice    59.  7.100 / 59.  7.100
-  libavfilter     8. 44.100 /  8. 44.100
-  libswscale      6.  7.100 /  6.  7.100
-  libswresample   4.  7.100 /  4.  7.100
-  libpostproc    56.  6.100 / 56.  6.100
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/mnt/videos/ferrandis.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf58.76.100
-  Duration: 00:01:46.53, start: 0.000000, bitrate: 807 kb/s
-  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], 670 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
-    Metadata:
-      handler_name    : VideoHandler
-      vendor_id       : [0][0][0][0]
-  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
-    Metadata:
-      handler_name    : SoundHandler
-      vendor_id       : [0][0][0][0]
-Stream mapping:
-  Stream #0:0 (h264) -> scale:default
-  scale:default -> Stream #0:0 (libx264)
-Press [q] to stop, [?] for help
-[libx264 @ 0x5ebd62072840] using SAR=1/1
-[libx264 @ 0x5ebd62072840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
-[libx264 @ 0x5ebd62072840] profile High, level 3.1, 4:2:0, 8-bit
-[libx264 @ 0x5ebd62072840] 264 - core 164 r3095 baee400 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=22 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=2 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=24 keyint_min=2 scenecut=40 intra_refresh=0 rc_lookahead=24 rc=crf mbtree=1 crf=20.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
-Output #0, mp4, to '/var/www/html/media/ferrandis/v1280x720_20.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf59.27.100
-  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], q=2-31, 30 fps, 15360 tbn
-    Metadata:
-      encoder         : Lavc59.37.100 libx264
-    Side data:
-      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
-frame=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    frame=  334 fps=0.0 q=26.0 size=     256kB time=00:00:09.40 bitrate= 223.1kbits/s speed=17.6x    frame=  694 fps=669 q=26.0 size=    1280kB time=00:00:21.40 bitrate= 490.0kbits/s speed=20.6x    frame= 1073 fps=697 q=26.0 size=    2560kB time=00:00:34.03 bitrate= 616.2kbits/s speed=22.1x    frame= 1263 fps=618 q=26.0 size=    3840kB time=00:00:40.36 bitrate= 779.3kbits/s speed=19.8x    frame= 1578 fps=620 q=26.0 size=    6144kB time=00:00:50.86 bitrate= 989.5kbits/s speed=  20x    frame= 1895 fps=623 q=26.0 size=    7936kB time=00:01:01.43 bitrate=1058.3kbits/s speed=20.2x    frame= 2269 fps=640 q=26.0 size=    9472kB time=00:01:13.90 bitrate=1050.0kbits/s speed=20.8x    frame= 2575 fps=636 q=26.0 size=   11520kB time=00:01:24.10 bitrate=1122.1kbits/s speed=20.8x    frame= 2934 fps=645 q=26.0 size=   12800kB time=00:01:36.06 bitrate=1091.5kbits/s speed=21.1x    frame= 3196 fps=634 q=-1.0 Lsize=   14384kB time=00:01:46.43 bitrate=1107.1kbits/s speed=21.1x    
-video:14352kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.218731%
-[libx264 @ 0x5ebd62072840] frame I:134   Avg QP:11.42  size: 75714
-[libx264 @ 0x5ebd62072840] frame P:1248  Avg QP:18.14  size:  3453
-[libx264 @ 0x5ebd62072840] frame B:1814  Avg QP:17.10  size:   133
-[libx264 @ 0x5ebd62072840] consecutive B-frames: 11.5% 13.3% 75.2%
-[libx264 @ 0x5ebd62072840] mb I  I16..4: 58.1% 20.0% 21.9%
-[libx264 @ 0x5ebd62072840] mb P  I16..4:  3.1%  2.8%  0.4%  P16..4:  7.0%  0.7%  0.6%  0.0%  0.0%    skip:85.3%
-[libx264 @ 0x5ebd62072840] mb B  I16..4:  0.2%  0.1%  0.0%  B16..8:  1.3%  0.0%  0.0%  direct: 0.2%  skip:98.1%  L0:36.9% L1:60.1% BI: 3.0%
-[libx264 @ 0x5ebd62072840] 8x8 transform intra:28.9% inter:60.3%
-[libx264 @ 0x5ebd62072840] coded y,uvDC,uvAC intra: 17.6% 20.1% 16.5% inter: 1.9% 1.9% 0.5%
-[libx264 @ 0x5ebd62072840] i16 v,h,dc,p: 65% 32%  3%  0%
-[libx264 @ 0x5ebd62072840] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 36% 18% 41%  1%  1%  1%  1%  1%  1%
-[libx264 @ 0x5ebd62072840] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 30% 12%  4%  5%  5%  6%  4%  7%
-[libx264 @ 0x5ebd62072840] i8c dc,h,v,p: 71% 22%  6%  1%
-[libx264 @ 0x5ebd62072840] Weighted P-Frames: Y:9.0% UV:1.8%
-[libx264 @ 0x5ebd62072840] ref P L0: 59.3% 21.1% 16.4%  2.6%  0.6%
-[libx264 @ 0x5ebd62072840] ref B L0: 67.0% 29.3%  3.7%
-[libx264 @ 0x5ebd62072840] kb/s:1103.57
-ffmpeg version 5.1.6-0+deb12u1 Copyright (c) 2000-2024 the FFmpeg developers
-  built with gcc 12 (Debian 12.2.0-14)
-  configuration: --prefix=/usr --extra-version=0+deb12u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librist --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --disable-sndio --enable-libjxl --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-libplacebo --enable-librav1e --enable-shared
-  libavutil      57. 28.100 / 57. 28.100
-  libavcodec     59. 37.100 / 59. 37.100
-  libavformat    59. 27.100 / 59. 27.100
-  libavdevice    59.  7.100 / 59.  7.100
-  libavfilter     8. 44.100 /  8. 44.100
-  libswscale      6.  7.100 /  6.  7.100
-  libswresample   4.  7.100 /  4.  7.100
-  libpostproc    56.  6.100 / 56.  6.100
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/mnt/videos/ferrandis.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf58.76.100
-  Duration: 00:01:46.53, start: 0.000000, bitrate: 807 kb/s
-  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], 670 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
-    Metadata:
-      handler_name    : VideoHandler
-      vendor_id       : [0][0][0][0]
-  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
-    Metadata:
-      handler_name    : SoundHandler
-      vendor_id       : [0][0][0][0]
-Stream mapping:
-  Stream #0:0 (h264) -> scale:default
-  scale:default -> Stream #0:0 (libx264)
-Press [q] to stop, [?] for help
-[libx264 @ 0x62fc8faf6840] using SAR=1/1
-[libx264 @ 0x62fc8faf6840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
-[libx264 @ 0x62fc8faf6840] profile High, level 3.1, 4:2:0, 8-bit
-[libx264 @ 0x62fc8faf6840] 264 - core 164 r3095 baee400 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=22 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=2 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=24 keyint_min=2 scenecut=40 intra_refresh=0 rc_lookahead=24 rc=crf mbtree=1 crf=30.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
-Output #0, mp4, to '/var/www/html/media/ferrandis/v1280x720_30.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf59.27.100
-  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], q=2-31, 30 fps, 15360 tbn
-    Metadata:
-      encoder         : Lavc59.37.100 libx264
-    Side data:
-      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
-frame=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    frame=  348 fps=0.0 q=36.0 size=       0kB time=00:00:09.86 bitrate=   0.0kbits/s speed=18.6x    frame=  703 fps=681 q=36.0 size=     512kB time=00:00:21.70 bitrate= 193.3kbits/s speed=  21x    frame= 1096 fps=715 q=36.0 size=    1280kB time=00:00:34.80 bitrate= 301.3kbits/s speed=22.7x    frame= 1313 fps=646 q=36.0 size=    1792kB time=00:00:42.03 bitrate= 349.3kbits/s speed=20.7x    frame= 1667 fps=658 q=36.0 size=    2816kB time=00:00:53.83 bitrate= 428.5kbits/s speed=21.3x    frame= 2031 fps=670 q=36.0 size=    3584kB time=00:01:05.96 bitrate= 445.1kbits/s speed=21.8x    frame= 2389 fps=676 q=36.0 size=    4352kB time=00:01:17.90 bitrate= 457.7kbits/s speed=  22x    frame= 2705 fps=671 q=36.0 size=    5376kB time=00:01:28.43 bitrate= 498.0kbits/s speed=21.9x    frame= 3089 fps=681 q=36.0 size=    5888kB time=00:01:41.23 bitrate= 476.5kbits/s speed=22.3x    frame= 3196 fps=670 q=-1.0 Lsize=    6363kB time=00:01:46.43 bitrate= 489.7kbits/s speed=22.3x    
-video:6332kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.493650%
-[libx264 @ 0x62fc8faf6840] frame I:134   Avg QP:23.12  size: 37396
-[libx264 @ 0x62fc8faf6840] frame P:1248  Avg QP:26.12  size:  1041
-[libx264 @ 0x62fc8faf6840] frame B:1814  Avg QP:26.64  size:    95
-[libx264 @ 0x62fc8faf6840] consecutive B-frames: 11.5% 13.3% 75.2%
-[libx264 @ 0x62fc8faf6840] mb I  I16..4: 41.3% 41.6% 17.1%
-[libx264 @ 0x62fc8faf6840] mb P  I16..4:  2.8%  2.3%  0.1%  P16..4:  3.9%  0.3%  0.3%  0.0%  0.0%    skip:90.3%
-[libx264 @ 0x62fc8faf6840] mb B  I16..4:  0.1%  0.0%  0.0%  B16..8:  1.5%  0.0%  0.0%  direct: 0.1%  skip:98.3%  L0:37.0% L1:61.5% BI: 1.5%
-[libx264 @ 0x62fc8faf6840] 8x8 transform intra:42.0% inter:63.5%
-[libx264 @ 0x62fc8faf6840] coded y,uvDC,uvAC intra: 14.9% 16.5% 12.2% inter: 0.8% 0.7% 0.0%
-[libx264 @ 0x62fc8faf6840] i16 v,h,dc,p: 56% 39%  4%  1%
-[libx264 @ 0x62fc8faf6840] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 37% 20% 37%  1%  1%  1%  1%  1%  2%
-[libx264 @ 0x62fc8faf6840] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 32% 31% 12%  3%  4%  4%  5%  3%  6%
-[libx264 @ 0x62fc8faf6840] i8c dc,h,v,p: 73% 21%  5%  1%
-[libx264 @ 0x62fc8faf6840] Weighted P-Frames: Y:9.0% UV:1.8%
-[libx264 @ 0x62fc8faf6840] ref P L0: 49.4% 28.9% 14.5%  5.4%  1.9%
-[libx264 @ 0x62fc8faf6840] ref B L0: 52.2% 39.7%  8.2%
-[libx264 @ 0x62fc8faf6840] kb/s:486.82
-ffmpeg version 5.1.6-0+deb12u1 Copyright (c) 2000-2024 the FFmpeg developers
-  built with gcc 12 (Debian 12.2.0-14)
-  configuration: --prefix=/usr --extra-version=0+deb12u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librist --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --disable-sndio --enable-libjxl --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-libplacebo --enable-librav1e --enable-shared
-  libavutil      57. 28.100 / 57. 28.100
-  libavcodec     59. 37.100 / 59. 37.100
-  libavformat    59. 27.100 / 59. 27.100
-  libavdevice    59.  7.100 / 59.  7.100
-  libavfilter     8. 44.100 /  8. 44.100
-  libswscale      6.  7.100 /  6.  7.100
-  libswresample   4.  7.100 /  4.  7.100
-  libpostproc    56.  6.100 / 56.  6.100
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/mnt/videos/ferrandis.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf58.76.100
-  Duration: 00:01:46.53, start: 0.000000, bitrate: 807 kb/s
-  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], 670 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
-    Metadata:
-      handler_name    : VideoHandler
-      vendor_id       : [0][0][0][0]
-  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
-    Metadata:
-      handler_name    : SoundHandler
-      vendor_id       : [0][0][0][0]
-Stream mapping:
-  Stream #0:0 (h264) -> scale:default
-  scale:default -> Stream #0:0 (libx264)
-Press [q] to stop, [?] for help
-[libx264 @ 0x5e5c3cce4840] using SAR=1/1
-[libx264 @ 0x5e5c3cce4840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
-[libx264 @ 0x5e5c3cce4840] profile High, level 3.1, 4:2:0, 8-bit
-[libx264 @ 0x5e5c3cce4840] 264 - core 164 r3095 baee400 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=22 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=2 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=24 keyint_min=2 scenecut=40 intra_refresh=0 rc_lookahead=24 rc=crf mbtree=1 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
-Output #0, mp4, to '/var/www/html/media/ferrandis/v1280x720_40.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf59.27.100
-  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], q=2-31, 30 fps, 15360 tbn
-    Metadata:
-      encoder         : Lavc59.37.100 libx264
-    Side data:
-      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
-frame=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    frame=  365 fps=0.0 q=46.0 size=       0kB time=00:00:10.43 bitrate=   0.0kbits/s speed=19.7x    frame=  731 fps=709 q=46.0 size=     256kB time=00:00:22.63 bitrate=  92.7kbits/s speed=21.9x    frame= 1128 fps=736 q=46.0 size=     512kB time=00:00:35.86 bitrate= 117.0kbits/s speed=23.4x    frame= 1422 fps=700 q=46.0 size=     768kB time=00:00:45.66 bitrate= 137.8kbits/s speed=22.5x    frame= 1775 fps=701 q=46.0 size=    1024kB time=00:00:57.43 bitrate= 146.1kbits/s speed=22.7x    frame= 2206 fps=727 q=46.0 size=    1536kB time=00:01:11.80 bitrate= 175.3kbits/s speed=23.7x    frame= 2562 fps=725 q=46.0 size=    1792kB time=00:01:23.66 bitrate= 175.5kbits/s speed=23.7x    frame= 2942 fps=729 q=46.0 size=    2048kB time=00:01:36.33 bitrate= 174.2kbits/s speed=23.9x    frame= 3196 fps=715 q=-1.0 Lsize=    2594kB time=00:01:46.43 bitrate= 199.7kbits/s speed=23.8x    
-video:2563kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 1.217907%
-[libx264 @ 0x5e5c3cce4840] frame I:134   Avg QP:32.32  size: 15058
-[libx264 @ 0x5e5c3cce4840] frame P:1248  Avg QP:33.75  size:   382
-[libx264 @ 0x5e5c3cce4840] frame B:1814  Avg QP:34.04  size:    71
-[libx264 @ 0x5e5c3cce4840] consecutive B-frames: 11.5% 13.3% 75.2%
-[libx264 @ 0x5e5c3cce4840] mb I  I16..4: 45.1% 43.7% 11.1%
-[libx264 @ 0x5e5c3cce4840] mb P  I16..4:  2.3%  1.3%  0.0%  P16..4:  1.8%  0.0%  0.1%  0.0%  0.0%    skip:94.5%
-[libx264 @ 0x5e5c3cce4840] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  1.2%  0.0%  0.0%  direct: 0.0%  skip:98.8%  L0:36.2% L1:62.9% BI: 0.9%
-[libx264 @ 0x5e5c3cce4840] 8x8 transform intra:41.8% inter:78.6%
-[libx264 @ 0x5e5c3cce4840] coded y,uvDC,uvAC intra: 13.5% 13.7% 6.6% inter: 0.2% 0.2% 0.0%
-[libx264 @ 0x5e5c3cce4840] i16 v,h,dc,p: 55% 40%  4%  1%
-[libx264 @ 0x5e5c3cce4840] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 34% 22% 36%  1%  1%  1%  1%  1%  2%
-[libx264 @ 0x5e5c3cce4840] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 32% 32% 14%  3%  4%  4%  5%  3%  5%
-[libx264 @ 0x5e5c3cce4840] i8c dc,h,v,p: 76% 18%  5%  1%
-[libx264 @ 0x5e5c3cce4840] Weighted P-Frames: Y:9.0% UV:1.8%
-[libx264 @ 0x5e5c3cce4840] ref P L0: 59.5% 15.9% 12.0%  6.6%  5.9%
-[libx264 @ 0x5e5c3cce4840] ref B L0: 49.1% 39.0% 11.9%
-[libx264 @ 0x5e5c3cce4840] kb/s:197.04
-ffmpeg version 5.1.6-0+deb12u1 Copyright (c) 2000-2024 the FFmpeg developers
-  built with gcc 12 (Debian 12.2.0-14)
-  configuration: --prefix=/usr --extra-version=0+deb12u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librist --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --disable-sndio --enable-libjxl --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-libplacebo --enable-librav1e --enable-shared
-  libavutil      57. 28.100 / 57. 28.100
-  libavcodec     59. 37.100 / 59. 37.100
-  libavformat    59. 27.100 / 59. 27.100
-  libavdevice    59.  7.100 / 59.  7.100
-  libavfilter     8. 44.100 /  8. 44.100
-  libswscale      6.  7.100 /  6.  7.100
-  libswresample   4.  7.100 /  4.  7.100
-  libpostproc    56.  6.100 / 56.  6.100
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/mnt/videos/ferrandis.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf58.76.100
-  Duration: 00:01:46.53, start: 0.000000, bitrate: 807 kb/s
-  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], 670 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
-    Metadata:
-      handler_name    : VideoHandler
-      vendor_id       : [0][0][0][0]
-  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
-    Metadata:
-      handler_name    : SoundHandler
-      vendor_id       : [0][0][0][0]
-Stream mapping:
-  Stream #0:0 (h264) -> scale:default
-  scale:default -> Stream #0:0 (libx264)
-Press [q] to stop, [?] for help
-[libx264 @ 0x6451c51e7840] using SAR=1/1
-[libx264 @ 0x6451c51e7840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
-[libx264 @ 0x6451c51e7840] profile High, level 4.0, 4:2:0, 8-bit
-[libx264 @ 0x6451c51e7840] 264 - core 164 r3095 baee400 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=24 lookahead_threads=4 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=2 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=24 keyint_min=2 scenecut=40 intra_refresh=0 rc_lookahead=24 rc=crf mbtree=1 crf=20.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
-Output #0, mp4, to '/var/www/html/media/ferrandis/v1920x1080_20.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf59.27.100
-  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 30 fps, 15360 tbn
-    Metadata:
-      encoder         : Lavc59.37.100 libx264
-    Side data:
-      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
-frame=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    frame=  154 fps=0.0 q=26.0 size=     256kB time=00:00:03.33 bitrate= 629.2kbits/s speed=6.28x    frame=  314 fps=304 q=26.0 size=     512kB time=00:00:08.66 bitrate= 484.0kbits/s speed= 8.4x    frame=  483 fps=315 q=26.0 size=    1280kB time=00:00:14.30 bitrate= 733.3kbits/s speed=9.32x    frame=  655 fps=321 q=26.0 size=    1792kB time=00:00:20.03 bitrate= 732.8kbits/s speed=9.83x    frame=  804 fps=317 q=26.0 size=    3072kB time=00:00:25.00 bitrate=1006.6kbits/s speed=9.85x    frame= 1004 fps=330 q=26.0 size=    4096kB time=00:00:31.66 bitrate=1059.6kbits/s speed=10.4x    frame= 1142 fps=322 q=26.0 size=    4864kB time=00:00:36.26 bitrate=1098.7kbits/s speed=10.2x    frame= 1228 fps=303 q=26.0 size=    5888kB time=00:00:39.13 bitrate=1232.6kbits/s speed=9.66x    frame= 1320 fps=290 q=26.0 size=    7936kB time=00:00:42.20 bitrate=1540.6kbits/s speed=9.27x    frame= 1488 fps=295 q=26.0 size=    9728kB time=00:00:47.80 bitrate=1667.2kbits/s speed=9.46x    frame= 1628 fps=293 q=26.0 size=   11008kB time=00:00:52.46 bitrate=1718.8kbits/s speed=9.45x    frame= 1777 fps=293 q=26.0 size=   12288kB time=00:00:57.43 bitrate=1752.7kbits/s speed=9.48x    frame= 1948 fps=297 q=26.0 size=   14080kB time=00:01:03.13 bitrate=1827.0kbits/s speed=9.63x    frame= 2143 fps=304 q=26.0 size=   15616kB time=00:01:09.63 bitrate=1837.1kbits/s speed=9.86x    frame= 2295 fps=304 q=26.0 size=   16640kB time=00:01:14.70 bitrate=1824.8kbits/s speed=9.88x    frame= 2455 fps=305 q=26.0 size=   18432kB time=00:01:20.03 bitrate=1886.7kbits/s speed=9.93x    frame= 2600 fps=304 q=26.0 size=   19968kB time=00:01:24.86 bitrate=1927.5kbits/s speed=9.91x    frame= 2750 fps=303 q=26.0 size=   20992kB time=00:01:29.86 bitrate=1913.6kbits/s speed=9.91x    frame= 2950 fps=308 q=26.0 size=   22016kB time=00:01:36.53 bitrate=1868.3kbits/s speed=10.1x    frame= 3087 fps=307 q=26.0 size=   23040kB time=00:01:41.10 bitrate=1866.9kbits/s speed=  10x    frame= 3196 fps=302 q=-1.0 Lsize=   24412kB time=00:01:46.43 bitrate=1878.9kbits/s speed=10.1x    
-video:24380kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.128819%
-[libx264 @ 0x6451c51e7840] frame I:134   Avg QP:11.46  size:125434
-[libx264 @ 0x6451c51e7840] frame P:1260  Avg QP:17.74  size:  6097
-[libx264 @ 0x6451c51e7840] frame B:1802  Avg QP:17.15  size:   263
-[libx264 @ 0x6451c51e7840] consecutive B-frames: 12.2% 12.9% 74.9%
-[libx264 @ 0x6451c51e7840] mb I  I16..4: 48.0% 37.4% 14.5%
-[libx264 @ 0x6451c51e7840] mb P  I16..4:  2.5%  3.8%  0.3%  P16..4:  5.9%  1.0%  0.9%  0.0%  0.0%    skip:85.8%
-[libx264 @ 0x6451c51e7840] mb B  I16..4:  0.1%  0.2%  0.0%  B16..8:  1.1%  0.0%  0.0%  direct: 0.3%  skip:98.3%  L0:31.7% L1:64.8% BI: 3.5%
-[libx264 @ 0x6451c51e7840] 8x8 transform intra:45.3% inter:66.2%
-[libx264 @ 0x6451c51e7840] coded y,uvDC,uvAC intra: 17.1% 20.6% 16.6% inter: 1.7% 1.9% 0.3%
-[libx264 @ 0x6451c51e7840] i16 v,h,dc,p: 65% 32%  3%  1%
-[libx264 @ 0x6451c51e7840] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 39% 22% 31%  1%  1%  1%  1%  1%  2%
-[libx264 @ 0x6451c51e7840] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 29% 31% 10%  3%  6%  5%  6%  4%  6%
-[libx264 @ 0x6451c51e7840] i8c dc,h,v,p: 73% 20%  5%  1%
-[libx264 @ 0x6451c51e7840] Weighted P-Frames: Y:8.0% UV:2.1%
-[libx264 @ 0x6451c51e7840] ref P L0: 62.2% 21.8% 13.6%  1.9%  0.4%
-[libx264 @ 0x6451c51e7840] ref B L0: 74.9% 22.5%  2.6%
-[libx264 @ 0x6451c51e7840] kb/s:1874.69
-ffmpeg version 5.1.6-0+deb12u1 Copyright (c) 2000-2024 the FFmpeg developers
-  built with gcc 12 (Debian 12.2.0-14)
-  configuration: --prefix=/usr --extra-version=0+deb12u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librist --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --disable-sndio --enable-libjxl --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-libplacebo --enable-librav1e --enable-shared
-  libavutil      57. 28.100 / 57. 28.100
-  libavcodec     59. 37.100 / 59. 37.100
-  libavformat    59. 27.100 / 59. 27.100
-  libavdevice    59.  7.100 / 59.  7.100
-  libavfilter     8. 44.100 /  8. 44.100
-  libswscale      6.  7.100 /  6.  7.100
-  libswresample   4.  7.100 /  4.  7.100
-  libpostproc    56.  6.100 / 56.  6.100
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/mnt/videos/ferrandis.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf58.76.100
-  Duration: 00:01:46.53, start: 0.000000, bitrate: 807 kb/s
-  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], 670 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
-    Metadata:
-      handler_name    : VideoHandler
-      vendor_id       : [0][0][0][0]
-  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
-    Metadata:
-      handler_name    : SoundHandler
-      vendor_id       : [0][0][0][0]
-Stream mapping:
-  Stream #0:0 (h264) -> scale:default
-  scale:default -> Stream #0:0 (libx264)
-Press [q] to stop, [?] for help
-[libx264 @ 0x5f2b631b1840] using SAR=1/1
-[libx264 @ 0x5f2b631b1840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
-[libx264 @ 0x5f2b631b1840] profile High, level 4.0, 4:2:0, 8-bit
-[libx264 @ 0x5f2b631b1840] 264 - core 164 r3095 baee400 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=24 lookahead_threads=4 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=2 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=24 keyint_min=2 scenecut=40 intra_refresh=0 rc_lookahead=24 rc=crf mbtree=1 crf=30.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
-Output #0, mp4, to '/var/www/html/media/ferrandis/v1920x1080_30.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf59.27.100
-  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 30 fps, 15360 tbn
-    Metadata:
-      encoder         : Lavc59.37.100 libx264
-    Side data:
-      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
-frame=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    frame=  154 fps=0.0 q=36.0 size=       0kB time=00:00:03.33 bitrate=   0.1kbits/s speed=6.26x    frame=  325 fps=315 q=36.0 size=     256kB time=00:00:09.03 bitrate= 232.2kbits/s speed=8.75x    frame=  504 fps=328 q=36.0 size=     512kB time=00:00:15.00 bitrate= 279.6kbits/s speed=9.77x    frame=  667 fps=328 q=36.0 size=     768kB time=00:00:20.43 bitrate= 307.9kbits/s speed=  10x    frame=  834 fps=329 q=36.0 size=    1280kB time=00:00:26.00 bitrate= 403.3kbits/s speed=10.3x    frame= 1026 fps=338 q=36.0 size=    1792kB time=00:00:32.40 bitrate= 453.1kbits/s speed=10.7x    frame= 1158 fps=327 q=36.0 size=    2048kB time=00:00:36.80 bitrate= 455.9kbits/s speed=10.4x    frame= 1256 fps=311 q=36.0 size=    2816kB time=00:00:40.06 bitrate= 575.8kbits/s speed=9.91x    frame= 1401 fps=308 q=36.0 size=    3328kB time=00:00:44.90 bitrate= 607.2kbits/s speed=9.88x    frame= 1570 fps=311 q=36.0 size=    4096kB time=00:00:50.53 bitrate= 664.0kbits/s speed=  10x    frame= 1738 fps=313 q=36.0 size=    4608kB time=00:00:56.13 bitrate= 672.5kbits/s speed=10.1x    frame= 1898 fps=314 q=36.0 size=    5376kB time=00:01:01.46 bitrate= 716.5kbits/s speed=10.2x    frame= 2098 fps=321 q=36.0 size=    5888kB time=00:01:08.13 bitrate= 707.9kbits/s speed=10.4x    frame= 2274 fps=323 q=36.0 size=    6400kB time=00:01:14.00 bitrate= 708.5kbits/s speed=10.5x    frame= 2437 fps=323 q=36.0 size=    7168kB time=00:01:19.43 bitrate= 739.2kbits/s speed=10.5x    frame= 2587 fps=321 q=36.0 size=    7680kB time=00:01:24.43 bitrate= 745.1kbits/s speed=10.5x    frame= 2728 fps=319 q=36.0 size=    8448kB time=00:01:29.13 bitrate= 776.4kbits/s speed=10.4x    frame= 2924 fps=323 q=36.0 size=    8704kB time=00:01:35.66 bitrate= 745.3kbits/s speed=10.6x    frame= 3065 fps=321 q=36.0 size=    9216kB time=00:01:40.36 bitrate= 752.2kbits/s speed=10.5x    frame= 3196 fps=316 q=-1.0 Lsize=    9874kB time=00:01:46.43 bitrate= 760.0kbits/s speed=10.5x    
-video:9843kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.316529%
-[libx264 @ 0x5f2b631b1840] frame I:134   Avg QP:22.91  size: 55849
-[libx264 @ 0x5f2b631b1840] frame P:1260  Avg QP:26.30  size:  1848
-[libx264 @ 0x5f2b631b1840] frame B:1802  Avg QP:27.10  size:   148
-[libx264 @ 0x5f2b631b1840] consecutive B-frames: 12.2% 12.9% 74.9%
-[libx264 @ 0x5f2b631b1840] mb I  I16..4: 32.2% 57.5% 10.3%
-[libx264 @ 0x5f2b631b1840] mb P  I16..4:  2.1%  3.0%  0.1%  P16..4:  3.5%  0.3%  0.3%  0.0%  0.0%    skip:90.8%
-[libx264 @ 0x5f2b631b1840] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  1.1%  0.0%  0.0%  direct: 0.1%  skip:98.8%  L0:34.3% L1:64.1% BI: 1.6%
-[libx264 @ 0x5f2b631b1840] 8x8 transform intra:57.6% inter:70.1%
-[libx264 @ 0x5f2b631b1840] coded y,uvDC,uvAC intra: 13.8% 16.0% 11.1% inter: 0.7% 0.7% 0.0%
-[libx264 @ 0x5f2b631b1840] i16 v,h,dc,p: 54% 41%  4%  2%
-[libx264 @ 0x5f2b631b1840] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 37% 21% 34%  1%  1%  1%  1%  1%  2%
-[libx264 @ 0x5f2b631b1840] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 32% 30% 10%  3%  5%  5%  6%  4%  6%
-[libx264 @ 0x5f2b631b1840] i8c dc,h,v,p: 76% 18%  5%  1%
-[libx264 @ 0x5f2b631b1840] Weighted P-Frames: Y:8.0% UV:2.1%
-[libx264 @ 0x5f2b631b1840] ref P L0: 51.3% 30.0% 12.8%  4.1%  1.8%
-[libx264 @ 0x5f2b631b1840] ref B L0: 58.2% 35.7%  6.2%
-[libx264 @ 0x5f2b631b1840] kb/s:756.84
-ffmpeg version 5.1.6-0+deb12u1 Copyright (c) 2000-2024 the FFmpeg developers
-  built with gcc 12 (Debian 12.2.0-14)
-  configuration: --prefix=/usr --extra-version=0+deb12u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librabbitmq --enable-librist --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --disable-sndio --enable-libjxl --enable-pocketsphinx --enable-librsvg --enable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libx264 --enable-libplacebo --enable-librav1e --enable-shared
-  libavutil      57. 28.100 / 57. 28.100
-  libavcodec     59. 37.100 / 59. 37.100
-  libavformat    59. 27.100 / 59. 27.100
-  libavdevice    59.  7.100 / 59.  7.100
-  libavfilter     8. 44.100 /  8. 44.100
-  libswscale      6.  7.100 /  6.  7.100
-  libswresample   4.  7.100 /  4.  7.100
-  libpostproc    56.  6.100 / 56.  6.100
-Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/mnt/videos/ferrandis.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf58.76.100
-  Duration: 00:01:46.53, start: 0.000000, bitrate: 807 kb/s
-  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1280x720 [SAR 1:1 DAR 16:9], 670 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
-    Metadata:
-      handler_name    : VideoHandler
-      vendor_id       : [0][0][0][0]
-  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 128 kb/s (default)
-    Metadata:
-      handler_name    : SoundHandler
-      vendor_id       : [0][0][0][0]
-Stream mapping:
-  Stream #0:0 (h264) -> scale:default
-  scale:default -> Stream #0:0 (libx264)
-Press [q] to stop, [?] for help
-[libx264 @ 0x6336a195d840] using SAR=1/1
-[libx264 @ 0x6336a195d840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
-[libx264 @ 0x6336a195d840] profile High, level 4.0, 4:2:0, 8-bit
-[libx264 @ 0x6336a195d840] 264 - core 164 r3095 baee400 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=24 lookahead_threads=4 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=2 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=24 keyint_min=2 scenecut=40 intra_refresh=0 rc_lookahead=24 rc=crf mbtree=1 crf=40.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
-Output #0, mp4, to '/var/www/html/media/ferrandis/v1920x1080_40.mp4':
-  Metadata:
-    major_brand     : isom
-    minor_version   : 512
-    compatible_brands: isomiso2avc1mp41
-    encoder         : Lavf59.27.100
-  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 30 fps, 15360 tbn
-    Metadata:
-      encoder         : Lavc59.37.100 libx264
-    Side data:
-      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
-frame=    1 fps=0.0 q=0.0 size=       0kB time=00:00:00.00 bitrate=N/A speed=   0x    frame=  160 fps=0.0 q=46.0 size=       0kB time=00:00:03.53 bitrate=   0.1kbits/s speed=6.59x    frame=  338 fps=326 q=46.0 size=       0kB time=00:00:09.46 bitrate=   0.0kbits/s speed=9.12x    frame=  523 fps=340 q=46.0 size=     256kB time=00:00:15.63 bitrate= 134.2kbits/s speed=10.2x    frame=  677 fps=332 q=46.0 size=     256kB time=00:00:20.76 bitrate= 101.0kbits/s speed=10.2x    frame=  855 fps=337 q=46.0 size=     512kB time=00:00:26.70 bitrate= 157.1kbits/s speed=10.5x    frame= 1052 fps=346 q=46.0 size=     768kB time=00:00:33.26 bitrate= 189.1kbits/s speed=10.9x    frame= 1187 fps=335 q=46.0 size=     768kB time=00:00:37.76 bitrate= 166.6kbits/s speed=10.7x    frame= 1294 fps=320 q=46.0 size=    1280kB time=00:00:41.33 bitrate= 253.7kbits/s speed=10.2x    frame= 1479 fps=325 q=46.0 size=    1536kB time=00:00:47.50 bitrate= 264.9kbits/s speed=10.5x    frame= 1637 fps=324 q=46.0 size=    1536kB time=00:00:52.76 bitrate= 238.5kbits/s speed=10.5x    frame= 1804 fps=325 q=46.0 size=    2048kB time=00:00:58.33 bitrate= 287.6kbits/s speed=10.5x    frame= 2003 fps=331 q=46.0 size=    2304kB time=00:01:04.96 bitrate= 290.5kbits/s speed=10.7x    frame= 2202 fps=336 q=46.0 size=    2560kB time=00:01:11.60 bitrate= 292.9kbits/s speed=10.9x    frame= 2366 fps=336 q=46.0 size=    2816kB time=00:01:17.06 bitrate= 299.3kbits/s speed=10.9x    frame= 2541 fps=337 q=43.0 size=    3072kB time=00:01:22.90 bitrate= 303.6kbits/s speed=  11x    frame= 2694 fps=335 q=46.0 size=    3328kB time=00:01:28.00 bitrate= 309.8kbits/s speed=10.9x    frame= 2896 fps=339 q=46.0 size=    3584kB time=00:01:34.73 bitrate= 309.9kbits/s speed=11.1x    frame= 3060 fps=338 q=46.0 size=    3840kB time=00:01:40.20 bitrate= 313.9kbits/s speed=11.1x    frame= 3196 fps=335 q=-1.0 Lsize=    4112kB time=00:01:46.43 bitrate= 316.5kbits/s speed=11.1x    
-video:4081kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.761614%
-[libx264 @ 0x6336a195d840] frame I:134   Avg QP:32.79  size: 22935
-[libx264 @ 0x6336a195d840] frame P:1260  Avg QP:34.31  size:   704
-[libx264 @ 0x6336a195d840] frame B:1802  Avg QP:34.58  size:   120
-[libx264 @ 0x6336a195d840] consecutive B-frames: 12.2% 12.9% 74.9%
-[libx264 @ 0x6336a195d840] mb I  I16..4: 34.1% 59.3%  6.6%
-[libx264 @ 0x6336a195d840] mb P  I16..4:  2.0%  1.6%  0.0%  P16..4:  1.7%  0.0%  0.1%  0.0%  0.0%    skip:94.6%
-[libx264 @ 0x6336a195d840] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  0.9%  0.0%  0.0%  direct: 0.0%  skip:99.1%  L0:34.3% L1:64.8% BI: 0.9%
-[libx264 @ 0x6336a195d840] 8x8 transform intra:55.5% inter:84.4%
-[libx264 @ 0x6336a195d840] coded y,uvDC,uvAC intra: 11.4% 12.1% 5.0% inter: 0.2% 0.2% 0.0%
-[libx264 @ 0x6336a195d840] i16 v,h,dc,p: 55% 40%  4%  2%
-[libx264 @ 0x6336a195d840] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 39% 22% 31%  1%  1%  1%  1%  1%  2%
-[libx264 @ 0x6336a195d840] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 32% 29% 11%  3%  5%  5%  5%  4%  5%
-[libx264 @ 0x6336a195d840] i8c dc,h,v,p: 79% 15%  4%  1%
-[libx264 @ 0x6336a195d840] Weighted P-Frames: Y:8.0% UV:2.1%
-[libx264 @ 0x6336a195d840] ref P L0: 62.4% 16.9% 11.3%  4.9%  4.6%
-[libx264 @ 0x6336a195d840] ref B L0: 53.7% 37.1%  9.3%
-[libx264 @ 0x6336a195d840] kb/s:313.73
-» /opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4fragment --fragment-duration 10 /var/www/html/media/ferrandis/audio.m4a /var/www/html/media/ferrandis/audio_f.mp4
-» /opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4fragment --fragment-duration 10 /var/www/html/media/ferrandis/v1280x720_20.mp4 /var/www/html/media/ferrandis/v1280x720_20_f.mp4
-» /opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4fragment --fragment-duration 10 /var/www/html/media/ferrandis/v1280x720_30.mp4 /var/www/html/media/ferrandis/v1280x720_30_f.mp4
-» /opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4fragment --fragment-duration 10 /var/www/html/media/ferrandis/v1280x720_40.mp4 /var/www/html/media/ferrandis/v1280x720_40_f.mp4
-» /opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4fragment --fragment-duration 10 /var/www/html/media/ferrandis/v1920x1080_20.mp4 /var/www/html/media/ferrandis/v1920x1080_20_f.mp4
-» /opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4fragment --fragment-duration 10 /var/www/html/media/ferrandis/v1920x1080_30.mp4 /var/www/html/media/ferrandis/v1920x1080_30_f.mp4
-» /opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4fragment --fragment-duration 10 /var/www/html/media/ferrandis/v1920x1080_40.mp4 /var/www/html/media/ferrandis/v1920x1080_40_f.mp4
-» /opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4fragment --fragment-duration 10 /var/www/html/media/ferrandis/v960x540_20.mp4 /var/www/html/media/ferrandis/v960x540_20_f.mp4
-» /opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4fragment --fragment-duration 10 /var/www/html/media/ferrandis/v960x540_30.mp4 /var/www/html/media/ferrandis/v960x540_30_f.mp4
-» /opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4fragment --fragment-duration 10 /var/www/html/media/ferrandis/v960x540_40.mp4 /var/www/html/media/ferrandis/v960x540_40_f.mp4
-» /opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4dash --force --use-segment-timeline --profiles=on-demand --output-dir=output/video.mpd /var/www/html/media/ferrandis/audio_f.mp4 /var/www/html/media/ferrandis/v1280x720_20_f.mp4 /var/www/html/media/ferrandis/v1280x720_30_f.mp4 /var/www/html/media/ferrandis/v1280x720_40_f.mp4 /var/www/html/media/ferrandis/v1920x1080_20_f.mp4 /var/www/html/media/ferrandis/v1920x1080_30_f.mp4 /var/www/html/media/ferrandis/v1920x1080_40_f.mp4 /var/www/html/media/ferrandis/v960x540_20_f.mp4 /var/www/html/media/ferrandis/v960x540_30_f.mp4 /var/www/html/media/ferrandis/v960x540_40_f.mp4
-ERROR: [Errno 2] No such file or directory: 'output/video.mpd'
-
-
-Traceback (most recent call last):
-  File "/opt/backend/procesado.py", line 147, in <module>
-    main()
-  File "/opt/backend/procesado.py", line 138, in main
-    empaquetar_digital(out_dir)
-  File "/opt/backend/procesado.py", line 108, in empaquetar_digital
-    run([
-  File "/opt/backend/procesado.py", line 42, in run
-    raise RuntimeError(f"Falló: {' '.join(cmd)}")
-RuntimeError: Falló: /opt/bento4/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4dash --force --use-segment-timeline --profiles=on-demand --output-dir=output/video.mpd /var/www/html/media/ferrandis/audio_f.mp4 /var/www/html/media/ferrandis/v1280x720_20_f.mp4 /var/www/html/media/ferrandis/v1280x720_30_f.mp4 /var/www/html/media/ferrandis/v1280x720_40_f.mp4 /var/www/html/media/ferrandis/v1920x1080_20_f.mp4 /var/www/html/media/ferrandis/v1920x1080_30_f.mp4 /var/www/html/media/ferrandis/v1920x1080_40_f.mp4 /var/www/html/media/ferrandis/v960x540_20_f.mp4 /var/www/html/media/ferrandis/v960x540_30_f.mp4 /var/www/html/media/ferrandis/v960x540_40_f.mp4
