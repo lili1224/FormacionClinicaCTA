@@ -1,0 +1,94 @@
+/* Estructura de columnas */
+.form-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Columna izquierda */
+.form-left {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.form-left section {
+  margin-bottom: 20px;
+}
+
+.form-left input,
+.form-left textarea,
+.form-left select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Columna derecha */
+.form-right {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.preview-box {
+  width: 100%;
+  display: none;
+  height: 180px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.preview-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Estilo input file */
+input[type="file"] {
+  padding: 12px;
+  border: 2px dashed #4a90e2;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  width: 100%;
+  max-width: 280px;
+  transition: background 0.3s ease;
+}
+
+input[type="file"]:hover {
+  background-color: #eef6ff;
+}
+
+/* Botón final */
+.form-submit {
+  text-align: center;
+}
+
+.form-submit button {
+  background-color: #4a90e2;
+  color: white;
+  padding: 14px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-submit button:hover {
+  background-color: #357ABD;
+}
+
