@@ -11,8 +11,8 @@ async function initApp() {
   }
 
   // 2. Petición al backend
-  const res  = await fetch(`../DB/php/episodio.php?id=${episodeId}`);
-  const data = await res.json();
+  const res   = await fetch(`/FormacionClinicaCTA/src/DB/php/episodio.php?id=${idEpisodio}`);
+  const datos = await res.json();
   if (!data || !data.video) {
     alert('No se encontró el episodio o no tiene video');
     return;
