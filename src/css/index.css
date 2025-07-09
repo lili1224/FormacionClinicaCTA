@@ -475,3 +475,13 @@ form .form-group label {
 }
 
 /* FIN USUARIO CSS */
+
+a.header-link {
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+
+a.header-link:hover,
+a.header-link:focus {
+  transform: scale(1.05);
+}

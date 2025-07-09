@@ -4,8 +4,11 @@
   <meta charset="UTF-8" />
   <title>Formación Clinica CTA</title>
   <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/nuevocurso.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
   <script src="js/recargaform.js"></script>
+
+
 </head>
 <body>
   <div class="header-background">
@@ -44,33 +47,50 @@
 
   <!-- Formulario de inicio de sesión -->
     <form id="curso_form" action="DB/php/nuevocurso.php" method="POST" enctype="multipart/form-data">
-        <section>
-            <label for="titulo">Titulo del curso del curso:</label><br>
-            <input type="text" name="titulo" placeholder="Titulo del curso" required>
-        </section>
-        <section>
-            <label for="descripcion">Descripción del curso del curso:</label><br>
-            <textarea name="descripcion" placeholder="Descripcion del curso" required></textarea>
-        </section>
-        <section>
-          <label for="imagen">Imagen del curso:</label><br>
-          <input type="file" name="imagen" accept="image/*" accept="image/png, image/jpeg, image/webp, image/gif" required>
-        </section>
-        <section>
-            <label for="accesibilidad">Accesibilidad del curso:</label>
-            <select id="accesibilidad" name="accesibilidad">
-                <option value="publico">Público</option>
-                <option value="formacion">Formación</option>
-                <option value="privado">Privado</option>
-            </select>
-        </section>
-        <section>
-            <label for="keywords">Palabras clave:</label><br>
-            <input type="text" name="keywords" placeholder="Palabras clave" required><br>
-        </section>
-        <button type="submit">Crear</button>
-    </form>
+  <div class="form-grid">
 
+    <!-- Columna izquierda -->
+    <div class="form-left">
+      <section>
+        <label for="titulo">Título del curso:</label><br>
+        <input type="text" name="titulo" placeholder="Título del curso" required>
+      </section>
+      <section>
+        <label for="descripcion">Descripción del curso:</label><br>
+        <textarea name="descripcion" placeholder="Descripción del curso" required></textarea>
+      </section>
+      <section>
+        <label for="accesibilidad">Accesibilidad del curso:</label><br>
+        <select id="accesibilidad" name="accesibilidad">
+          <option value="publico">Público</option>
+          <option value="formacion">Formación</option>
+          <option value="privado">Privado</option>
+        </select>
+      </section>
+      <section>
+        <label for="keywords">Palabras clave:</label><br>
+        <input type="text" name="keywords" placeholder="Palabras clave" required>
+      </section>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="form-right">
+      <section>
+        <label for="imagen">Imagen del curso:</label><br>
+        <div class="preview-box">
+          <img id="preview-img" src="" alt="Vista previa"/>
+        </div>
+        <input type="file" id="imagen" name="imagen" accept="image/*" required>
+      </section>
+    </div>
+  </div>
+
+  <div class="form-submit">
+    <button type="submit">Crear</button>
+  </div>
+</form>
+
+  <script src="js/nuevocurso.js"></script>
   <script src="js/index.js"></script>
 </body>
 </html>
