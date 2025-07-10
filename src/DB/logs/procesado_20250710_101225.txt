@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/opt/backend/procesado.py", line 148, in <module>
+    main()
+  File "/opt/backend/procesado.py", line 132, in main
+    out_dir.mkdir(parents=True, exist_ok=True)
+  File "/usr/lib/python3.11/pathlib.py", line 1117, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [Errno 13] Permission denied: '/var/www/html/media/ferrandis'
