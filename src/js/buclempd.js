@@ -11,7 +11,7 @@ async function initApp() {
   }
 
   // 2. Petición al backend
-  const res   = await fetch(`../DB/php/episodio.php?iepisodeId=${episodeId}`);
+  const res   = await fetch(`../DB/php/episodio.php?id=${episodeId}`);
   const datos = await res.json();
   if (!datos || !datos.video) {
     alert('No se encontró el episodio o no tiene video');
