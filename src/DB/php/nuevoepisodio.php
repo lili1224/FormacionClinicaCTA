@@ -25,14 +25,12 @@ if ($titulo === '' || $desc === '' || $video === '') {
     exit('Datos incompletos');
 }
 
-// ───── VALIDACIÓN DEL VÍDEO ─────
-$baseDir = realpath('/mnt/videos');          // carpeta montada por Docker
-$src     = realpath($baseDir . '/' . $video);
-
-if (!$src || strpos($src, $baseDir) !== 0 || !is_file($src)) {
-    http_response_code(400);
+$src = realpath(__DIR__ . '/../../VideosOriginales/mnt/videos/' . $video);
+if (!$src || !str_contains($src, '/VideosOriginales/mnt/videos/')) {
     exit('Vídeo no válido');
 }
+
+
 
 // ───── DIRECTORIO DE SALIDA ─────
 $videoName = pathinfo($video, PATHINFO_FILENAME);
