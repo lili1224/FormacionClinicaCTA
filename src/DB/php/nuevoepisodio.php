@@ -5,21 +5,15 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// ───── CONFIGURACIONES DE RUTA ─────
-define('FS_ROOT', realpath(dirname(__DIR__, 3))); // /var/www/html/FormacionClinicaCTA
-define('WEB_ROOT', '');
-
-// ───── CONEXIÓN ─────
 $conn = new mysqli('db','root','root','usuariosDB');
 $conn->set_charset('utf8mb4');
 
-// ───── DATOS DEL FORMULARIO ─────
 $titulo = trim($_POST['titulo'] ?? '');
 $desc   = trim($_POST['descripcion'] ?? '');
 $curso  = trim($_POST['curso'] ?? '');
 $video  = basename($_POST['video'] ?? '');
 
-// ───── VALIDACIÓN ─────
+// Validación básica
 if ($titulo === '' || $desc === '' || $video === '') {
     http_response_code(400);
     exit('Datos incompletos');
@@ -31,60 +25,49 @@ if (!$src || !str_contains($src, '/videos/')) {
 }
 
 
-
-// ───── DIRECTORIO DE SALIDA ─────
-$videoName = pathinfo($video, PATHINFO_FILENAME);
-$outDir = "/var/www/html/media/$videoName";
+$outDir = "VideosProcesados/".pathinfo($video, PATHINFO_FILENAME);
 @mkdir($outDir, 0777, true);
 
-// ───── PROCESADO PYTHON ─────
 $timestamp = date('Ymd_His');
 $logFile = "/var/www/html/logs/procesado_$timestamp.txt";
-$logWeb  = WEB_ROOT . '/logs/procesado_' . $timestamp . '.txt';
 
 $cmd = escapeshellcmd("python3 /opt/backend/procesado.py '$src' '$outDir'")
-     . " > " . escapeshellarg($logFile) . " 2>&1";
+      . " > " . escapeshellarg($logFile) . " 2>&1";
 
 exec($cmd, $out, $code);
+$log = implode("\n", $out);
 
 if ($code !== 0) {
     http_response_code(500);
-
-    // ▼----------------- DEPURACIÓN RÁPIDA ----------------▼
-    echo "<pre>";
-    echo "Código devuelto por Python: $code\n";
-    echo "Log generado en: $logFile\n";
-    echo "</pre>";
-    // ▲----------------- /DEPURACIÓN ----------------▲
-
-    exit("Error procesando el vídeo. <a href='$logWeb' target='_blank'>Ver log</a>");
+    exit("Error procesando el vídeo. Detalles: <a href='/logs/" . basename($logFile) . "' target='_blank'>ver log</a>");
 }
 
-// ───── LOCALIZAR MPD ─────
-clearstatcache();
+// 3) Comprueba la existencia del MPD con ruta absoluta real
 $mpdAbsolute = realpath("$outDir/output/video.mpd");
+// vacía la caché de stat para que PHP no use datos viejos
+clearstatcache();
 
-if (!$mpdAbsolute || !is_file($mpdAbsolute)) {
-    $candidatos = glob("$outDir/output/*.mpd");
-    if (!$candidatos) {
+if ($mpdAbsolute === false || !is_file($mpdAbsolute)) {
+    // ▸ Plan B: busca cualquier .mpd dentro de output/
+    $candidatos = glob($outDir . "/output/*.mpd");
+    if ($candidatos) {
+        $mpdAbsolute = realpath($candidatos[0]);     // primer MPD hallado
+    } else {
+        error_log("MPD no encontrado en $outDir/output/");
         http_response_code(500);
-        exit("No se generó el MPD. <a href='$logWeb' target='_blank'>Revisar log</a>");
+        exit("No se generó el MPD. Revisa el log.");
     }
-    $mpdAbsolute = realpath($candidatos[0]);
 }
 
-// ───── GUARDAR RUTA RELATIVA PARA WEB ─────
-$mpdWeb = WEB_ROOT . '/media/' . $videoName . '/output/' . basename($mpdAbsolute);
+// 4) Ruta “web” (sin /var/www/html) para guardar en la BD
+$mpdWeb = str_replace('/var/www/html', '', $mpdAbsolute);
 
-// ───── GUARDAR EN BASE DE DATOS ─────
+// …inserta $mpdWeb en MySQL…
 $stmt = $conn->prepare(
-    "INSERT INTO episodios (nombre, descripcion, video, curso)
-     VALUES (?,?,?,?)"
+   "INSERT INTO episodios (nombre, descripcion, video, curso)
+    VALUES (?,?,?,?)"
 );
 $stmt->bind_param('ssss', $titulo, $desc, $mpdWeb, $curso);
 $stmt->execute();
 
-// ───── REDIRECCIÓN ─────
-header('Location: ' . WEB_ROOT . '/nuevoepisodio.html?success=1');
-exit;
-?>
+header('Location: /nuevoepisodio.html?success=1');
