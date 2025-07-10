@@ -30,17 +30,20 @@ async function loadCourseAndEpisodes() {
       const li = document.createElement('li');
       li.className = 'episode-item';
 
-      /*  👇 Enlace directo al reproductor
-          Pasamos episodeId (y opcionalmente courseId para un botón “volver”) */
+      const thumbnail = ep.thumbnail || 'https://placehold.co/640x360?text=Episodio';
+
       li.innerHTML = `
+        <img src="${thumbnail}" alt="${ep.title}" class="rounded-md mb-2 h-40 object-cover w-full" />
         <a href="reproductor.html?episodeId=${ep.id}&courseId=${courseId}">
           <strong>${i + 1}. ${ep.title}</strong>
         </a>
-        <span>(${ep.video})</span>
+        <p>${ep.descripcion}</p>
       `;
 
       container.appendChild(li);
     });
+
+
   } catch (err) {
     console.error('Error cargando curso o episodios:', err);
   }

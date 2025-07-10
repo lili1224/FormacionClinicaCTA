@@ -9,7 +9,8 @@ if ($episodeId) {
         "SELECT id,
                 nombre       AS title,
                 descripcion,
-                video
+                video,
+                imagen       AS thumbnail
          FROM   episodios
          WHERE  id = ?"
     );
@@ -30,7 +31,8 @@ if ($courseId) {
         "SELECT id,
                 nombre       AS title,
                 descripcion,
-                video
+                video,
+                imagen       AS thumbnail
          FROM   episodios
          WHERE  curso = ?"
     );
@@ -43,7 +45,8 @@ if ($courseId) {
         "SELECT id,
                 nombre       AS title,
                 descripcion,
-                video
+                video,
+                imagen       AS thumbnail
          FROM   episodios"
     );
 }

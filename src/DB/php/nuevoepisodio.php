@@ -46,6 +46,26 @@ if ($code !== 0) {
 $mpdAbsolute = realpath("$outDir/output/video.mpd");
 // vacía la caché de stat para que PHP no use datos viejos
 clearstatcache();
+// ========== SUBIR LA IMAGEN ==========
+$uploadDir = '/var/www/html/uploads/'; // Directorio absoluto en el servidor
+@mkdir($uploadDir, 0777, true); // Asegura que exista
+
+if (!isset($_FILES['imagen']) || $_FILES['imagen']['error'] !== UPLOAD_ERR_OK) {
+    http_response_code(400);
+    exit('Error al subir la imagen.');
+}
+
+$extension = pathinfo($_FILES['imagen']['name'], PATHINFO_EXTENSION);
+$nombreImagen = uniqid('episodio_', true) . '.' . $extension;
+
+$rutaDestino = $uploadDir . $nombreImagen;
+$rutaBD = 'uploads/' . $nombreImagen; // Lo que se guarda en la BD
+
+if (!move_uploaded_file($_FILES['imagen']['tmp_name'], $rutaDestino)) {
+    http_response_code(500);
+    exit('Error al mover la imagen al directorio de destino.');
+}
+
 
 if ($mpdAbsolute === false || !is_file($mpdAbsolute)) {
     // ▸ Plan B: busca cualquier .mpd dentro de output/
@@ -64,10 +84,11 @@ $mpdWeb = str_replace('/var/www/html', '', $mpdAbsolute);
 
 // …inserta $mpdWeb en MySQL…
 $stmt = $conn->prepare(
-   "INSERT INTO episodios (nombre, descripcion, video, curso)
-    VALUES (?,?,?,?)"
+   "INSERT INTO episodios (nombre, descripcion, video, curso, imagen)
+    VALUES (?,?,?,?,?)"
 );
-$stmt->bind_param('ssss', $titulo, $desc, $mpdWeb, $curso);
+$stmt->bind_param('sssss', $titulo, $desc, $mpdWeb, $curso, $rutaBD);
 $stmt->execute();
+
 
 header('Location: /nuevoepisodio.html?success=1');
