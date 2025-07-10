@@ -19,8 +19,8 @@ if ($titulo === '' || $desc === '' || $video === '') {
     exit('Datos incompletos');
 }
 
-$src = realpath(__DIR__ . '/../../VideosOriginales/mnt/videos/' . $video);
-if (!$src || !str_contains($src, '/VideosOriginales/mnt/videos/')) {
+$src = realpath(__DIR__ . '/../../videos/' . $video);
+if (!$src || !str_contains($src, '/videos/')) {
     exit('Vídeo no válido');
 }
 
