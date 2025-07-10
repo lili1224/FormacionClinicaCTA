@@ -19,10 +19,11 @@ if ($titulo === '' || $desc === '' || $video === '') {
     exit('Datos incompletos');
 }
 
-$src = realpath("/mnt/videos/$video");
-if (!$src || !str_starts_with($src, '/mnt/videos/')) {
+$src = realpath(__DIR__ . '/../../VideosOriginales/mnt/videos/' . $video);
+if (!$src || !str_contains($src, '/VideosOriginales/mnt/videos/')) {
     exit('Vídeo no válido');
 }
+
 
 $outDir = "VideosProcesados/".pathinfo($video, PATHINFO_FILENAME);
 @mkdir($outDir, 0777, true);
