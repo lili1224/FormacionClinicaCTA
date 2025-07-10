@@ -5,55 +5,64 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// ───── CONFIGURACIONES DE RUTA ─────
+define('FS_ROOT', realpath(dirname(__DIR__, 3))); // /var/www/html/FormacionClinicaCTA
+define('WEB_ROOT', '');
+
+// ───── CONEXIÓN ─────
 $conn = new mysqli('db','root','root','usuariosDB');
 $conn->set_charset('utf8mb4');
 
+// ───── DATOS DEL FORMULARIO ─────
 $titulo = trim($_POST['titulo'] ?? '');
 $desc   = trim($_POST['descripcion'] ?? '');
 $curso  = trim($_POST['curso'] ?? '');
 $video  = basename($_POST['video'] ?? '');
 
-const PROJECT_BASE = '/FormacionClinicaCTA';               
-$docRoot = realpath($_SERVER['DOCUMENT_ROOT'] ?? '/var/www/html') ?: '/var/www/html';
-
-
-
-// Validación básica
+// ───── VALIDACIÓN ─────
 if ($titulo === '' || $desc === '' || $video === '') {
     http_response_code(400);
     exit('Datos incompletos');
 }
 
-$src = realpath("/mnt/videos/$video");
-if (!$src || !str_starts_with($src, '/mnt/videos/')) {
+// ───── VALIDACIÓN DEL VÍDEO ─────
+$baseDir = realpath('/mnt/videos');          // carpeta montada por Docker
+$src     = realpath($baseDir . '/' . $video);
+
+if (!$src || strpos($src, $baseDir) !== 0 || !is_file($src)) {
+    http_response_code(400);
     exit('Vídeo no válido');
 }
 
-/* ─────────  DIRECTORIO DE SALIDA ───────── */
+// ───── DIRECTORIO DE SALIDA ─────
+$videoName = pathinfo($video, PATHINFO_FILENAME);
+$outDir = "/var/www/html/media/$videoName";
+@mkdir($outDir, 0777, true);
 
-$relativeOutput = PROJECT_BASE .
-                  '/src/DB/php/VideosProcesados/' .
-                  pathinfo($video, PATHINFO_FILENAME);
-
-$outDir = $relativeOutput;
-@mkdir("$outDir/output", 0777, true);
-
-/* ─────────  PROCESADO ───────── */
+// ───── PROCESADO PYTHON ─────
 $timestamp = date('Ymd_His');
-$logFile   =  PROJECT_BASE . "/logs/procesado_$timestamp.txt";
+$logFile = "/var/www/html/logs/procesado_$timestamp.txt";
+$logWeb  = WEB_ROOT . '/logs/procesado_' . $timestamp . '.txt';
 
-$cmd = escapeshellcmd("python3 ../../../Backend/procesado.py '$src' '$outDir'")
+$cmd = escapeshellcmd("python3 /opt/backend/procesado.py '$src' '$outDir'")
      . " > " . escapeshellarg($logFile) . " 2>&1";
 
 exec($cmd, $out, $code);
 
 if ($code !== 0) {
     http_response_code(500);
-    exit("Error procesando el vídeo. "
-       . "<a href='" . PROJECT_BASE . "/logs/" . basename($logFile) . "' target='_blank'>ver log</a>");
+
+    // ▼----------------- DEPURACIÓN RÁPIDA ----------------▼
+    echo "<pre>";
+    echo "Código devuelto por Python: $code\n";
+    echo "Log generado en: $logFile\n";
+    echo "</pre>";
+    // ▲----------------- /DEPURACIÓN ----------------▲
+
+    exit("Error procesando el vídeo. <a href='$logWeb' target='_blank'>Ver log</a>");
 }
 
-/* ─────────  LOCALIZA EL .mpd ───────── */
+// ───── LOCALIZAR MPD ─────
 clearstatcache();
 $mpdAbsolute = realpath("$outDir/output/video.mpd");
 
@@ -61,16 +70,15 @@ if (!$mpdAbsolute || !is_file($mpdAbsolute)) {
     $candidatos = glob("$outDir/output/*.mpd");
     if (!$candidatos) {
         http_response_code(500);
-        exit('No se generó el MPD. Revisa el log.');
+        exit("No se generó el MPD. <a href='$logWeb' target='_blank'>Revisar log</a>");
     }
     $mpdAbsolute = realpath($candidatos[0]);
 }
 
+// ───── GUARDAR RUTA RELATIVA PARA WEB ─────
+$mpdWeb = WEB_ROOT . '/media/' . $videoName . '/output/' . basename($mpdAbsolute);
 
-/* ─────────  URL QUE GUARDAREMOS ─────────
-   ⇒ /FormacionClinicaCTA/src/DB/php/VideosProcesados/ferrandis/output/video.mpd */
-$mpdWeb = $relativeOutput . '/output/' . basename($mpdAbsolute);
-
+// ───── GUARDAR EN BASE DE DATOS ─────
 $stmt = $conn->prepare(
     "INSERT INTO episodios (nombre, descripcion, video, curso)
      VALUES (?,?,?,?)"
@@ -78,7 +86,7 @@ $stmt = $conn->prepare(
 $stmt->bind_param('ssss', $titulo, $desc, $mpdWeb, $curso);
 $stmt->execute();
 
-header('Location: ' . PROJECT_BASE . '/nuevoepisodio.html?success=1');
+// ───── REDIRECCIÓN ─────
+header('Location: ' . WEB_ROOT . '/nuevoepisodio.html?success=1');
 exit;
-
 ?>
