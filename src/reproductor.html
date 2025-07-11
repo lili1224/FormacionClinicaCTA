@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <title>Reproductor video</title>
     <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/reproductor.css" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
     <script src="js/shaka-player.compiled.js"></script>
     <script src="js/buclempd.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
   <div class="header-background">
@@ -28,10 +30,10 @@
                 </a>
             </div>
             <div class="grid-item">
-                <a href="curso.html" class="grid-button">PROGRAMAS GRATUITOS</a>
+                <a href="curso.html" class="grid-button">CURSOS</a>
             </div>
             <div class="grid-item">
-                <a href="curso.html" class="grid-button">PROGRAMAS PROFESIONALES</a>
+                <a href="sobrenosotros.html" class="grid-button">SOBRE NOSOTROS</a>
             </div>
             <div class="grid-item">
                 <a href="iniciarsesion.html" class="grid-button" id="btn-login">INICIAR SESIÓN</a>
@@ -43,9 +45,10 @@
     </div>
 
     <div class="popular-programs">Reproductor con video de ejemplo</div>
-    <div>
-        <video id="video" controls width="640" height="360"></video>
+    <div class="video-container">
+        <video id="video" controls></video>
     </div>
+
 
 
     
@@ -74,6 +77,6 @@
     </div>
   </footer>
 
-    <script src="js/index.js"></script>
+
 </body>
 </html>

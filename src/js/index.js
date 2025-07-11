@@ -48,3 +48,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.error('Error cargando cursos:', err);
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Solo ejecutamos esto si estamos en reproductor.html
+  if (window.location.pathname.includes('reproductor.html')) {
+    const params = new URLSearchParams(window.location.search);
+    const episodeId = params.get('episodeId');
+
+    if (episodeId) {
+      fetch(`DB/php/episodio.php?id=${episodeId}`)
+        .then(res => res.json())
+        .then(data => {
+          const titleDiv = document.querySelector('.popular-programs');
+          if (titleDiv && data && data.title) {
+            titleDiv.textContent = data.title;
+          }
+        })
+        .catch(err => console.error('Error al obtener el episodio:', err));
+    }
+  }
+});

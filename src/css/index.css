@@ -186,6 +186,7 @@ h1 a.header-link {
   justify-content: center;
   align-items: flex-start;
   margin: 40px auto;
+  margin-bottom: 13px;
   padding: 0 40px;
   text-align: left;
   gap: 18%; /* espacio entre .left, .divider y .right */
