@@ -131,6 +131,7 @@ h1 a.header-link {
   margin: 0 auto 40px auto;
   padding: 0 20px;
   box-sizing: border-box;
+  margin-bottom: 133px;
 }
 
 .image-box {
@@ -185,6 +186,7 @@ h1 a.header-link {
   justify-content: center;
   align-items: flex-start;
   margin: 40px auto;
+  margin-bottom: 13px;
   padding: 0 40px;
   text-align: left;
   gap: 18%; /* espacio entre .left, .divider y .right */
@@ -264,10 +266,10 @@ form .form-group label {
 }
 /* USUARIO CSS */
 #cerrarSesion {
-  position: fixed;
-  bottom: 20px;
-  right: 70px;
-  z-index: 100;
+    position: relative;
+    bottom: -20px;
+    margin-bottom: 36px;
+    right: -790px;
 }
 .button-81 {
   background-color: #fff;
@@ -485,3 +487,42 @@ a.header-link:hover,
 a.header-link:focus {
   transform: scale(1.05);
 }
+/* FOOTER CSS */
+.footer {
+  background-color: #333;
+  color: #fff;
+  font-size: 12px;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Footer contenido */
+.footer-content {
+
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+}
+
+/* Links */
+.footer-content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+/* Iconos sociales */
+.social-icons a img {
+  height: 16px;
+  width: 16px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+/* FIN FOOTER CSS */

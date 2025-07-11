@@ -4,6 +4,7 @@
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   padding: 1rem;
+  margin-bottom: 105px
 }
 
 /* Tarjeta del curso */

@@ -13,4 +13,6 @@ a.enlace-episodios:hover,
 a.enlace-episodios:focus {
   transform: scale(1.1);
 }
-
+.titulo-seccion {
+  margin-bottom: 162px;
+}

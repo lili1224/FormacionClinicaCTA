@@ -44,6 +44,7 @@ p#courseDescription {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border-radius: 3rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 84px;
 }
 
 .episode-item:hover {
@@ -84,4 +85,63 @@ p#courseDescription {
 a.block {
   color: black;
   text-decoration: none;
+}
+/* From Uiverse.io by mobinkakei */ 
+.btn {
+  width: 140px;
+  height: 50px;
+  background: linear-gradient(to top, #00154c, #12376e, #23487f);
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.btn span {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: top 0.5s;
+}
+
+.btn-text-one {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.btn-text-two {
+  position: absolute;
+  width: 100%;
+  top: 150%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+/* Animación de zoom al hacer hover */
+.btn {
+  transition: transform 0.25s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.btn:hover {
+  transform: scale(1.08);
+}
+
+.btn:hover .btn-text-one {
+  top: -100%;
+}
+
+.btn:hover .btn-text-two {
+  top: 50%;
+}
+.btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000; /* para que esté encima del resto del contenido */
 }

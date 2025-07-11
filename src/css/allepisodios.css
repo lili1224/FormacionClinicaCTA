@@ -21,7 +21,7 @@
 .episode-item {              /* ← usa la clase que pone tu JS */
   border: 2px solid #6d6d6d;
   width: 250px;
-  padding: 20px;
+  padding-bottom: 20px;
   margin-bottom: 20px;
   border-radius: 3rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
