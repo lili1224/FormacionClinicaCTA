@@ -27,20 +27,19 @@ async function loadCourseAndEpisodes() {
     container.innerHTML = '';
 
     episodes.forEach((ep, i) => {
-      const li = document.createElement('li');
-      li.className = 'episode-item';
-
       const thumbnail = ep.thumbnail || 'https://placehold.co/640x360?text=Episodio';
 
-      li.innerHTML = `
-        <img src="${thumbnail}" alt="${ep.title}" class="rounded-md mb-2 h-40 object-cover w-full" />
-        <a href="reproductor.html?episodeId=${ep.id}&courseId=${courseId}">
+      container.innerHTML += `
+      <div class="episode-wrapper">
+        <a href="reproductor.html?episodeId=${ep.id}&courseId=${courseId}" class="block no-underline text-inherit">
+        <li class="episode-item" style="list-style:none;">
+          <img src="${thumbnail}" alt="${ep.title}" class="rounded-md mb-2 h-40 object-cover w-full" />
           <strong>${i + 1}. ${ep.title}</strong>
+          <p>${ep.descripcion}</p>
+        </li>
         </a>
-        <p>${ep.descripcion}</p>
+      </div>
       `;
-
-      container.appendChild(li);
     });
 
 
