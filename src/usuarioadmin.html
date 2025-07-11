@@ -5,6 +5,10 @@
   <title>Panel de Administración - Clínica CTA</title>
   <link rel="stylesheet" href="css/index.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
+  <script src="js/catalogocursos.js" defer></script>
+  <script src="js/allepisodes.js" defer></script>
+  <link rel="stylesheet" href="css/catalogocurso.css" />
+  <link rel="stylesheet" href="css/allepisodios.css" />
 </head>
 <body>
   <!-- Logo -->
@@ -54,25 +58,10 @@
       </div>
     </div>
 
-    <div class="grid-cursos">
-      <!-- Curso 1 -->
-      <div class="curso-box">
-        <div class="curso-overlay">
-          <p>Nombre del curso</p>
-        </div>
-        <img src="img/curso1.jpg" alt="Curso 1" />
-      </div>
-
-      <!-- Curso 2 -->
-      <div class="curso-box">
-        <div class="curso-overlay">
-          <p>Nombre del curso</p>
-        </div>
-        <img src="img/curso2.jpg" alt="Curso 2" />
-      </div>
-
-      <!-- Más cursos en el futuro -->
-    </div>
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <!-- Contenedor para las tarjetas de los cursos -->
+      <div id="courses" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </main>
   </section>
 
   <!-- Sección: Mis episodios -->
@@ -84,7 +73,10 @@
       </button>
     </div>
 
-    <!-- Aquí irán las cajas de episodios cuando se añadan -->
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <!-- Contenedor para las tarjetas de los cursos -->
+      <ul id="episodes"></ul>
+    </main>  
   </section>
 
   <!-- Botón cerrar sesión -->
