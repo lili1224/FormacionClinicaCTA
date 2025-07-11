@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-  background-color: #efe7df;
+  background-color: #F2F2F2;
 }
 
 .header-background {
@@ -21,7 +21,7 @@ body {
   position: absolute;
   top: 20px;
   left: 10px;
-  height: 50px;
+  height: 80px;
   width: auto;
   z-index: 1000;
   background-color: rgba(128, 128, 128, 0.5);
@@ -90,7 +90,7 @@ h1 a.header-link {
 
 .linea {
   height: 3px;
-  background-color: black;
+  background-color: #F2B6C6;
   width: 100%;
   margin-top: 0; /* sin margen superior */
   margin-bottom: 0;
@@ -102,13 +102,13 @@ h1 a.header-link {
   font-size: 2rem; /* grande */
   text-align: center;
   margin: 30px 0 20px 0; /* espacio arriba y abajo */
-  color: black;
+  color: #D96381;
 }
 .grid-button {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 20px;       /* tu tamaño */
-  color: black;
+  color: #D98299;
   text-decoration: none;
   padding: 5px 10px;     /* un poco de padding para que no quede tan pegado */
   background-color: transparent;
@@ -169,7 +169,7 @@ h1 a.header-link {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #F2D5DD;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
